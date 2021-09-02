@@ -1,0 +1,37 @@
+.header {
+  padding-top: 46px;
+  background-image: url(../images/header-mobil-320x230@1x.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 230px;
+  color: #ffffff;
+
+  &__box {
+    display: flex;
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 0.5px solid #ffffff;
+    background-color: transparent;
+    color: inherit;
+  }
+}
+
+.nav-menu {
+  margin-left: 112px;
+  display: flex;
+
+  &__btn {
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+  }
+  &__btn:not(:last-child) {
+    margin-right: 40px;
+  }
+}

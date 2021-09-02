@@ -6,7 +6,9 @@
   "homepage": "https://github.com/DenysPhV/project_group_2",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /project_group_2/"
+    "build": "parcel build src/*.html --public-url /project_group_2/",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",

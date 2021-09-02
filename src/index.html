@@ -12,10 +12,18 @@
     />
   </head>
   <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <include src="./partials/example.html"></include>
+    <div class="container">
+      <header class="header__page"></header>
+    </div>
+    <div class="container">
+      <main class="main__page"></main>
+    </div>
+    <div class="container">
+      <footer class="footer__page"></footer>
+    </div>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
   </body>
 </html>

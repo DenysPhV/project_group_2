@@ -1,4 +1,4 @@
-// import './sass/main.scss';
+import './sass/main.scss';
 // ============== Импорт на pnotify ===================
 // import '@pnotify/core/dist/BrightTheme.css';
 // import '@pnotify/core/dist/PNotify.css';

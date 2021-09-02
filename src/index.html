@@ -18,24 +18,25 @@
     />
   </head>
   <body>
-    <div class="container">
-      <header class="header__page"></header>
-    </div>
-    <div class="container">
-      <main class="main__page"></main>
-    </div>
-    <div class="container">
-      <footer class="footer__page">
-        <p>
+    <header class="header__page">
+      <div class="container"></div>
+    </header>
+
+    <main class="main__page"><div class="container"></div></main>
+
+    <footer class="footer__page">
+      <div class="container">
+        <p class="footer__page-lead">
           &COPY; 2020 | All Rights Reserved | Developed with
           <span>
-            <svg width="14px" height="13px">
-              <use href="./images/heart.svg#heart"></use></svg
-            ><a href="">by GoIT Students</a></span
+            <svg class="footer__page-icon" width="14px" height="13px">
+              <use href="./images/heart.svg#heart"></use>
+            </svg>
+            <a href="">by GoIT Students</a></span
           >
         </p>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>

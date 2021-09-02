@@ -1,19 +1,16 @@
 .container {
   // Контейнер для mobil
-  display: block;
   margin: 0 auto;
-  width: 320px;
   padding: 0 20px;
+  width: 320px;
 
   // Контейнер для tablet
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    width: 768px;
-    padding: 0 20px;
+  @media screen and (min-width: 768px) {
+    width: 658px;
   }
 
   // Контейнер для desktop
   @media screen and (min-width: 1024px) {
-    width: 1024px;
-    padding: 0 20px;
+    width: 922px;
   }
 }

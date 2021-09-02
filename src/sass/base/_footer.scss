@@ -1,0 +1,17 @@
+.footer__page {
+  //   outline: 1px solid tomato;
+  text-align: center;
+
+  &-lead {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &-icon {
+    fill: #ff6b08;
+  }
+
+  @media screen and (max-width: 767px) {
+    min-width: 320px;
+  }
+}

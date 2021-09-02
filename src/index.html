@@ -18,12 +18,19 @@
     />
   </head>
   <body>
-    <header class="header__page">
-      <div class="container"></div>
-    </header>
 
-    <main class="main__page"><div class="container"></div></main>
-
+    <div class="container">
+      <header class="header__page"></header>
+    </div>
+    <div class="container">
+      <main class="main__page">
+        <div class="pagination-thumb">
+        <div id="tui-pagination-container" class="tui-pagination"></div>
+        </div>
+      </main>
+      
+    </div>    
+    </div>
     <footer class="footer__page">
       <div class="container">
         <p class="footer__page-lead">
@@ -37,6 +44,9 @@
         </p>
       </div>
     </footer>
+
+    
+
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>

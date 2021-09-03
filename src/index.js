@@ -1,6 +1,8 @@
 import './sass/main.scss';
 import './js/pagination';
+import modalFilmBox from './js/modal-film';
 
+modalFilmBox();
 
 // ============== Импорт на pnotify ===================
 // import '@pnotify/core/dist/BrightTheme.css';

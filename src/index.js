@@ -8,5 +8,5 @@ import './sass/main.scss';
 // ================= debounce ==========================
 // const debounce = require('lodash.debounce');
 
-import ApiService from './apiService.js';
+import ApiService from './js/apiService';
 const apiService = new ApiService();

@@ -1,6 +1,6 @@
- const galleryContainer = document.querySelector('.js-gallery')
+export const galleryContainer = document.querySelector('.js-gallery');
  
 
-export default {
-    galleryContainer,
-}
+// export default {
+//     galleryContainer,
+// }

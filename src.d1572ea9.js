@@ -12,4 +12,4 @@ var t;!function(e,n){"object"==typeof exports&&"object"==typeof module?module.ex
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/pagination");var e=s(require("./js/apiService"));function s(e){return e&&e.__esModule?e:{default:e}}const r=new e.default;
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/apiService":"eQwa"}]},{},["Focm"], null)
-//# sourceMappingURL=/project_group_2/src.b3bf45ee.js.map
+//# sourceMappingURL=/project_group_2/src.d1572ea9.js.map

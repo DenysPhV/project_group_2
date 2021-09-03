@@ -1,7 +1,6 @@
 import './sass/main.scss';
 import './js/pagination';
 
-
 // ============== Импорт на pnotify ===================
 // import '@pnotify/core/dist/BrightTheme.css';
 // import '@pnotify/core/dist/PNotify.css';
@@ -12,3 +11,5 @@ import './js/pagination';
 
 import ApiService from './js/apiService';
 const apiService = new ApiService();
+
+import homeBtnRenderPage from './js/homeBtnRenderPage';

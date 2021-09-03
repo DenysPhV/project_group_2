@@ -1,46 +1,35 @@
-// Скрипт отвечает за отрисовку главной страницы по клику на кнопку HOME
+// Скрипт отвечает за отрисовку главной страницы по клику на кнопку HOME и ЛОГО
 console.log('Run myScript');
 
 import ApiService from './apiService';
+import { homeBtnEl, logoEl, galleryContainer } from './refs.js';
+import { cardsMarkUp } from './cards-mark-up';
+
 const apiService = new ApiService();
 
-const homeBtnEl = document.querySelector('.home-btn-js');
-const mainPageEl = document.querySelector('.main__page');
-const logoEl = document.querySelector('.logo-js');
+// const libBtnEl = document.querySelector('.lib-btn-js');
 
-const onHomeBtnClick = () => {
+const renderMainPageOnClick = e => {
   console.log('click home-btn');
+  e.preventDefault();
   homeBtnEl.classList.add('home-btn-active');
-  sendRequest();
-};
-
-const sendRequest = () => {
+  homeBtnEl.style.color = '#ffffff';
+  apiService.resetPage();
   apiService
     .fetchTrending()
     .then(data => {
       console.log(data);
       return data;
     })
-    .then(renderMainPage);
+    .then(cardsMarkUp);
 };
 
-const renderMainPage = movies => {
-  const markup = movies
-    .map(movie => {
-      return `<img src="https://image.tmdb.org/t/p/w300${movie.poster_path}" /><p>${movie.original_title}</p><p>${movie.genre_ids}</p><p>${movie.release_date}</p>`;
-    })
-    .join('');
-  // mainPageEl.innerHTML = '';
-  mainPageEl.insertAdjacentHTML('afterbegin', markup);
-};
+// const resetMainPage = e => {
+//   galleryContainer.innerHTML = '';
+//   homeBtnEl.classList.remove('home-btn-active');
+// };
 
-const resetMainPage = () => {
-  mainPageEl.innerHTML = '';
-};
+homeBtnEl.addEventListener('click', renderMainPageOnClick);
+logoEl.addEventListener('click', renderMainPageOnClick);
 
-homeBtnEl.addEventListener('click', onHomeBtnClick);
-logoEl.addEventListener('click', resetMainPage);
-
-// export default function test() {
-//   console.log('Run myScript from test function');
-// }
+// libBtnEl.addEventListener('click', resetMainPage);

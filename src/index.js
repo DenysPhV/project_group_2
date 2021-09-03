@@ -1,4 +1,5 @@
 import './sass/main.scss';
+
 // ============== Импорт на pnotify ===================
 // import '@pnotify/core/dist/BrightTheme.css';
 // import '@pnotify/core/dist/PNotify.css';
@@ -6,3 +7,6 @@ import './sass/main.scss';
 
 // ================= debounce ==========================
 // const debounce = require('lodash.debounce');
+
+import ApiService from './apiService.js';
+const apiService = new ApiService();

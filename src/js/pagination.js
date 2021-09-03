@@ -1,5 +1,8 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+import ApiService from './apiService';
+
+const apiService = new ApiService();
 
 // Опции для отрисовки пагинации с документации
 const options = {
@@ -29,3 +32,4 @@ const options = {
 };
 export { options };
 const pagination = new Pagination('#tui-pagination-container', options);
+const page = pagination.getCurrentPage();

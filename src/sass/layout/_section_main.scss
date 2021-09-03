@@ -1,0 +1,25 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -20px;
+  margin-top: -20px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.gallery__item {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+  flex-basis: calc(100% / 3 - 20px);
+  max-width: 274px;
+}
+
+// .movie-card {
+//   display: block;
+// }
+
+// .poster {
+//   // display: block;
+//   max-width: 274px;
+// }

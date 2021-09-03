@@ -14,15 +14,6 @@ import './js/pagination';
 import ApiService from './js/apiService';
 import cardsTemplate from './templates/cards.hbs';
 import refs from './js/refs.js'
+import cardsMarkUp from './js/cards-mark-up.js'
 
 
-const apiService = new ApiService();
-
-apiService.fetchTrending().then(cards => {
-    cardsMarkUp(cards)
-});
-
-
-function cardsMarkUp (cards) {
-    refs.galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
-}

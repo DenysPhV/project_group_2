@@ -2,11 +2,10 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import ApiService from './apiService';
 import cardsTemplate from '../templates/cards.hbs';
-import refs from './refs';
+import Refs from './refs';
 
-const ref = refs();
 const apiService = new ApiService();
-
+const container = document.getElementById('pagination');
 // Опции для отрисовки пагинации с документации
 const options = {
   total_pages: 0,
@@ -33,18 +32,21 @@ const options = {
       '</a>',
   },
 };
-export { options };
+export { container, options };
 const pagination = new Pagination('#tui-pagination-container', options);
 const page = pagination.getCurrentPage();
-
+// Запрос в фетч и рендер карточек
 apiService.fetchTrending(page).then(res => {
-  pagination.reset([1].total_pages);
+  // console.log(res);
+  pagination.reset(res.total_pages);
   renderGallery(res);
   const li = document.querySelectorAll('.gallery__item');
 });
 
+// Функция пагинации
 pagination.on('afterMove', e => {
   const currentPage = e.page;
+
   clearGallery();
   apiService.fetchTrending(currentPage).then(res => {
     renderGallery(res);
@@ -52,10 +54,11 @@ pagination.on('afterMove', e => {
   });
 });
 
+// Рендер карточки
 function renderGallery(data) {
-  ref.galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
+  Refs.galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
 }
-
+// Очистка галерии
 function clearGallery() {
-  ref.galleryContainer.innerHTML = '';
+  Refs.galleryContainer.innerHTML = '';
 }

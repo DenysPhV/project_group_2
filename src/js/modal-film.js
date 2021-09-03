@@ -15,13 +15,26 @@ function onClick(event) {
     return;
   }
     const filmId = event.target.dataset.id;
-
-    apiService.fetchMovieDetails(filmId).then(card => {
-    modalMarkUp(card)
+  // console.log(event.target.dataset.id);
+  apiService.fetchMovieDetails(filmId).then(card => {
+    // console.log(card);
+    modalMarkUp(card);
+    modalOpenClick();
     });
     
 }
 
-function modalMarkUp() {
-refs.galleryContainer.insertAdjacentHTML('beforeend', modalFilmTemplate(card));
+function modalMarkUp(card) {
+  refs.modalContainer.insertAdjacentHTML('beforeend', modalFilmTemplate(card));
+}
+
+// Функция открытия модалки
+function modalOpenClick() {
+  console.log('dsad')
+  refs.modalContainer.classList.add("is-open");
+}
+
+// Функция закрытия модалки
+function modalClose() {
+  refs.modalContainer.classList.remove("is-open");
 }

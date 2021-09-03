@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header class="header">
       <div class="container header__container">
@@ -41,9 +42,12 @@
 
     <div class="container">
       <main class="main__page">
-        <div class="pagination-thumb">
-          <div id="tui-pagination-container" class="tui-pagination"></div>
-        </div>
+        <section class="section_main">
+          <ul class="gallery list js-gallery"></ul>
+          <div class="pagination-thumb">
+            <div id="tui-pagination-container" class="tui-pagination"></div>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -55,7 +59,7 @@
             <svg class="footer__page-icon" width="14px" height="13px">
               <use href="./images/heart.svg#heart"></use>
             </svg>
-            <a href="#">by GoIT Students</a></span
+            <a href="#" class="footer__page-dev">by GoIT Students</a></span
           >
         </p>
       </div>

@@ -1,7 +1,10 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import ApiService from './apiService';
+import cardsTemplate from '../templates/cards.hbs';
+import refs from './refs';
 
+const ref = refs();
 const apiService = new ApiService();
 
 // Опции для отрисовки пагинации с документации
@@ -33,3 +36,26 @@ const options = {
 export { options };
 const pagination = new Pagination('#tui-pagination-container', options);
 const page = pagination.getCurrentPage();
+
+apiService.fetchTrending(page).then(res => {
+  pagination.reset([1].total_pages);
+  renderGallery(res);
+  const li = document.querySelectorAll('.gallery__item');
+});
+
+pagination.on('afterMove', e => {
+  const currentPage = e.page;
+  clearGallery();
+  apiService.fetchTrending(currentPage).then(res => {
+    renderGallery(res);
+    const li = document.querySelectorAll('.gallery__item');
+  });
+});
+
+function renderGallery(data) {
+  ref.galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
+}
+
+function clearGallery() {
+  ref.galleryContainer.innerHTML = '';
+}

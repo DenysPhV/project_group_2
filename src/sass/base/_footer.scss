@@ -1,6 +1,7 @@
 .footer__page {
   //   outline: 1px solid tomato;
   text-align: center;
+  margin: 0 auto;
 
   &-lead {
     padding-top: 30px;
@@ -13,5 +14,15 @@
 
   @media screen and (max-width: 767px) {
     min-width: 320px;
+  }
+
+  // Контейнер для tablet
+  @media screen and (min-width: 768px) {
+    width: 658px;
+  }
+
+  // Контейнер для desktop
+  @media screen and (min-width: 1024px) {
+    width: 922px;
   }
 }

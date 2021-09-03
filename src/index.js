@@ -11,9 +11,11 @@ import './js/pagination';
 
 import ApiService from './js/apiService';
 
+
 const apiService = new ApiService();
 
 import homeBtnRenderPage from './js/homeBtnRenderPage';
+
 
 import cardsTemplate from './templates/cards.hbs';
 import refs from './js/refs.js';

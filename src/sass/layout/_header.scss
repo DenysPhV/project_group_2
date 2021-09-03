@@ -8,6 +8,10 @@
   background-size: cover;
   color: #ffffff;
 
+  @media screen and (max-width: 767px) {
+    min-width: 320px;
+  }
+
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/header-tablet-768x230@1x.jpg);
@@ -18,9 +22,9 @@
       url(../images/header-desktop-1024x230@1x.jpg);
   }
 
-  &__container {
-    // outline: 1px solid red;
-  }
+  //   &__container {
+  //     outline: 1px solid red;
+  //   }
 
   &__box {
     display: flex;
@@ -112,7 +116,7 @@
   &::after {
     position: absolute;
     top: 8.5px;
-    right: 2px;
+    right: 5px;
     display: inline-block;
     content: '';
     width: 12px;

@@ -1,10 +1,8 @@
-import { galleryContainer }  from './refs.js';
+import { galleryContainer } from './refs.js';
 import cardsTemplate from '../templates/cards.hbs';
 import ApiService from './apiService';
 
 const apiService = new ApiService();
-
-
 
 apiService.fetchTrending().then(cards => {
     cards.map(card => card.release_date = card.release_date.substring(0, 4));
@@ -12,8 +10,6 @@ apiService.fetchTrending().then(cards => {
 });
 
 
-
-function cardsMarkUp (cards) {
-    galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
+export function cardsMarkUp(cards) {
+  galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
 }
-

@@ -3,46 +3,45 @@
     <div class="modal__backdrop"></div>
     <div class="modal__container">
         <div class="film__imgBox">
-            <img class="image" src="https://www.themoviedb.org/t/p/w500{{poster_path}}" alt="{{title}}" title="{{title}}">
+            <img class="image" src="https://www.themoviedb.org/t/p/w300{{poster_path}}" alt="{{title}}" title="{{title}}">
         </div>
         <div class="film__infoBox">
             <div>
-                <h2 class="film__title">A FISTFUL OF LEAD</h2>
+                <h2 class="film__title">{{title}}</h2>
                 <ul class="list">
                     <li class="film__item">
                         <p class="film__properties">Vote / Votes</p>
                         <p class="properties__data--upper">
-                            <span class="properties__data--marker">7.3</span>
+                            <span class="properties__data--marker">{{vote_average}}</span>
                             <span class="properties__data--divider">/</span>
-                            <span>1260</span>
+                            <span>{{vote_count}}</span>
                         </p>
                     </li>
                     <li class="film__item">
                         <p class="film__properties">Popularity</p>
-                        <p class="properties__data--upper">100.2</p>
+                        <p class="properties__data--upper">{{popularity}}</p>
                     </li>
                     <li class="film__item">
                         <p class="film__properties">Original Title</p>
-                        <p>A FISTFUL OF LEAD</p>
+                        <p>{{original_title}}</p>
                     </li>
                     <li class="film__item">
                         <p class="film__properties">Genre</p>
-                        <p>Western</p>
+                        <p>
+                        {{#if genres}}
+                        {{#each genres}}
+                        <span>{{this.name}}{{#unless @last}},{{/unless}}</span>
+                        {{/each}}
+                        {{else}}<span>N/A</span>
+                        {{/if}}
+                        </p>
                     </li>
                 </ul>
             </div>
             <div>
                 <h3 class="about__title">About
                 </h3>
-                <p class="about__text">Four of the West’s most infamous outlaws assemble to steal a huge stash of gold
-                    from the most corrupt settlement of the
-                    gold rush towns. But not all goes to plan one is killed and the other three escapes with bags of
-                    gold hide out in the
-                    abandoned gold mine where they happen across another gang of three – who themselves were planning to
-                    hit the very same
-                    bank! As tensions rise, things go from bad to worse as they realise the bags of gold are filled with
-                    lead... they’ve
-                    been double crossed – but by who and how?</p>
+                <p class="about__text">{{overview}}</p>
             </div>
             <div class="film__buttonBox">
                 <button type="button" class="film__button film__btnWatched">Add to Watched</button>

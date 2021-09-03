@@ -19,9 +19,26 @@
     />
   </head>
   <body>
-    <div class="container">
-      <header class="header__page"></header>
-    </div>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__box">
+          <a class="header__link link-style" href=""
+            ><img class="header__logo" src="./images/film.svg" alt="logo" />
+            <span class="header__logo-text">Filmoteka</span>
+          </a>
+
+          <nav class="nav-menu">
+            <button class="nav-menu__btn" type="button">Home</button>
+            <button class="nav-menu__btn" type="button">my library</button>
+          </nav>
+        </div>
+
+        <div class="input-wrap">
+          <input class="header__input" type="text" placeholder="Search movies" />
+        </div>
+      </div>
+    </header>
+
     <div class="container">
       <main class="main__page">
         <div class="pagination-thumb">

@@ -9,3 +9,4 @@ export const inputText = document.querySelector('.header__input');
 export const searchForm = document.querySelector('.input-wrap');
 export const notification = document.querySelector('.notification');
 export const modalContainer = document.querySelector('.modal');
+export const body = document.querySelector('body');

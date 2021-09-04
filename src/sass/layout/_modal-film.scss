@@ -18,6 +18,11 @@
   opacity: 1;
   pointer-events: initial;
 }
+// Блокируем скрол
+body.modal-open {
+  overflow: hidden;
+}
+
 // Фоновая подложка
 .modal__backdrop {
   position: absolute;

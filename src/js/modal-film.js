@@ -1,4 +1,4 @@
-import { galleryContainer, modalContainer} from './refs.js';
+import { galleryContainer, modalContainer, body} from './refs.js';
 import modalFilmTemplate from '../templates/modal-film.hbs';
 import ApiService from './apiService';
 
@@ -38,6 +38,8 @@ function modalMarkUp(card) {
 function modalOpenClick() {
   // Добавляем стиль is-open
   modalContainer.classList.add("is-open");
+    // Добавляем стиль modal-open - блокировка скрола
+  body.classList.add("modal-open");
   // Снимаем слушатель с галереи
   galleryContainer.removeEventListener('click', onClick);
   // Ставим слушатель на кнопку Close
@@ -49,6 +51,8 @@ function modalOpenClick() {
 function modalClose() {
   // Удаляем стиль is-open
   modalContainer.classList.remove("is-open");
+    // Удаляем стиль modal-open 
+  body.classList.remove("modal-open");
   // Снимаем слушатель с кнопки Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.removeEventListener('click', modalClose);

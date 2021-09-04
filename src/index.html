@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header header__main-bg-js">
       <div class="container header__container">
         <div class="header__box">
           <a class="header__link link-style logo-js" href=""
@@ -29,16 +29,19 @@
           </a>
 
           <nav class="nav-menu">
-            <button class="nav-menu__btn home-btn-js" type="button">Home</button>
-            <button class="nav-menu__btn" type="button">my library</button>
+            <button class="nav-menu__btn nav-menu__btn_active home-btn-js" type="button">
+              Home
+            </button>
+            <button class="nav-menu__btn lib-btn-js" type="button">my library</button>
           </nav>
         </div>
 
-        <form class="input-wrap">
+        <form class="input-wrap input-wrap_searchIcon">
           <input class="header__input" type="text" placeholder="Поиск фильмов" />
           <button type="submit"></button>
         </form>
         <p class="notification"></p>
+    
     </header>
 
     <div class="container">

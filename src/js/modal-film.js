@@ -20,7 +20,14 @@ function onClick(event) {
 
   // Запрос по id на сервер
   apiService.fetchMovieDetails(filmId).then(card => {
-    // console.log(card);
+    console.log(card);
+    // Проверяет количество жаров 
+    if (card.genres.length > 3) {
+      card.genres = card.genres.slice(0, 3);
+    }
+    // Проверяет пришол ли постер фильма
+    (card.poster_path != null)?card.poster_path = 'https://www.themoviedb.org/t/p/w300' + card.poster_path : card.poster_path ='https://upload.wikimedia.org/wikipedia/commons/c/c2/No_image_poster.png';
+    console.log(card.poster_path);
     // Запуск функции рендер модалки
     modalMarkUp(card);
     // Запуск функции открытия модалки
@@ -45,6 +52,11 @@ function modalOpenClick() {
   // Ставим слушатель на кнопку Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.addEventListener('click', modalClose);
+// Ставим слушатель на Overlay 
+  const refsOverlay = document.querySelector('.modal__backdrop');
+  refsOverlay.addEventListener("click", overlayClick);
+  // Ставим слушатель нажатых клавиш
+  window.addEventListener("keydown", pressKey);
 }
 
 // Функция закрытия модалки
@@ -56,8 +68,27 @@ function modalClose() {
   // Снимаем слушатель с кнопки Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.removeEventListener('click', modalClose);
+  // Снимаем слушатель overlay
+  const refsOverlay = document.querySelector('.modal__backdrop');
+  refsOverlay.removeEventListener("click", overlayClick);
+  // Снимаем слушатель клавиш
+  window.removeEventListener("keydown", pressKey);
   // Ставим слушатель на галерею
   galleryContainer.addEventListener('click', onClick);
   // Чистим модалку 
   modalContainer.innerHTML = '';
+}
+
+// Функция обработки Click на оверлей
+function overlayClick(event) {
+  if (event.currentTarget === event.target) {
+    modalClose();
+  }
+}
+
+// Фукция обработки нажатых клавиш
+function pressKey(event) {
+  if (event.key === "Escape") {
+    modalClose();
+  }
 }

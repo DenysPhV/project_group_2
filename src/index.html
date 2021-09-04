@@ -36,10 +36,12 @@
           </nav>
         </div>
 
-        <div class="input-wrap input-wrap_searchIcon">
-          <input class="header__input" type="text" placeholder="Search movies" />
-        </div>
-      </div>
+        <form class="input-wrap input-wrap_searchIcon">
+          <input class="header__input" type="text" placeholder="Поиск фильмов" />
+          <button type="submit"></button>
+        </form>
+        <p class="notification"></p>
+    
     </header>
 
     <div class="container">
@@ -66,6 +68,10 @@
         </p>
       </div>
     </footer>
+    <!-- Модалка -->
+    <div class="modal">
+    </div>
+    <!-- модалка конец -->
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>

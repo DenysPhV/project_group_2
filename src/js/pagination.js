@@ -2,17 +2,16 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import ApiService from './apiService';
 import cardsTemplate from '../templates/cards.hbs';
-import Refs from './refs';
+import { galleryContainer } from './refs';
 
 const apiService = new ApiService();
-const container = document.getElementById('pagination');
 // Опции для отрисовки пагинации с документации
 const options = {
-  total_pages: 0,
-  itemsPerPage: 20,
-  visiblePages: 5,
+  totalItems: 0,
+  itemsPerPage: 10,
+  visiblePages: 10,
   page: 1,
-  centerAlign: true,
+  centerAlign: false,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
   template: {
@@ -32,33 +31,37 @@ const options = {
       '</a>',
   },
 };
-export { container, options };
+
+export { options };
 const pagination = new Pagination('#tui-pagination-container', options);
 const page = pagination.getCurrentPage();
-// Запрос в фетч и рендер карточек
-apiService.fetchTrending(page).then(res => {
-  // console.log(res);
-  pagination.reset(res.total_pages);
-  renderGallery(res);
-  const li = document.querySelectorAll('.gallery__item');
-});
 
-// Функция пагинации
-pagination.on('afterMove', e => {
-  const currentPage = e.page;
+function movieBtn(li, res) {}
 
-  clearGallery();
-  apiService.fetchTrending(currentPage).then(res => {
-    renderGallery(res);
-    const li = document.querySelectorAll('.gallery__item');
-  });
-});
+// // Запрос в фетч и рендер карточек
+// apiService.fetchTrending(page).then(res => {
+//   // console.log(res);
+//   pagination.reset(res.total_pages);
+//   renderGallery(res);
+//   const li = document.querySelectorAll('.gallery__item');
+// });
 
-// Рендер карточки
-function renderGallery(data) {
-  Refs.galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
-}
-// Очистка галерии
-function clearGallery() {
-  Refs.galleryContainer.innerHTML = '';
-}
+// // Функция пагинации
+// pagination.on('afterMove', e => {
+//   const currentPage = e.page;
+
+//   clearGallery();
+//   apiService.fetchTrending(currentPage).then(res => {
+//     renderGallery(res);
+//     const li = document.querySelectorAll('.gallery__item');
+//   });
+// });
+
+// // Рендер карточки
+// function renderGallery(data) {
+//   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
+// }
+// // Очистка галерии
+// function clearGallery() {
+//   galleryContainer.innerHTML = '';
+// }

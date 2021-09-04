@@ -5,9 +5,11 @@ import modalFilmBox from './modal-film';
 
 const apiService = new ApiService();
 
+
 apiService.fetchTrending(1).then(cards => {
   cards.results.map(card => (card.release_date = card.release_date.substring(0, 4)));
   cardsMarkUp(cards.results);
+
   modalFilmBox();
 });
 

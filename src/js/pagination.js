@@ -5,12 +5,14 @@ import cardsTemplate from '../templates/cards.hbs';
 import { galleryContainer } from './refs';
 
 const apiService = new ApiService();
+
+const container = document.getElementById('tui-pagination-container');
 // Опции для отрисовки пагинации с документации
 const options = {
-  totalItems: 0,
+  totalItems: 1000,
   itemsPerPage: 10,
   visiblePages: 10,
-  page: 1,
+  page: 5,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
@@ -32,11 +34,10 @@ const options = {
   },
 };
 
-export { options };
-const pagination = new Pagination('#tui-pagination-container', options);
+const pagination = new Pagination(container, options);
+
 const page = pagination.getCurrentPage();
 
-function movieBtn(li, res) {}
 
 // Запрос в фетч и рендер карточек
 apiService.fetchTrending(1).then(res => {
@@ -62,6 +63,8 @@ pagination.on('afterMove', e => {
 function renderGallery(data) {
   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
 }
+
+
 // Очистка галерии
 function clearGallery() {
   galleryContainer.innerHTML = '';

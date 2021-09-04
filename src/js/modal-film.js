@@ -1,4 +1,4 @@
-import refs from './refs';
+import { galleryContainer, modalContainer} from './refs.js';
 import modalFilmTemplate from '../templates/modal-film.hbs';
 import ApiService from './apiService';
 
@@ -6,7 +6,7 @@ const apiService = new ApiService()
 
   
 export default function modalFilmBox() {
-refs.galleryContainer.addEventListener('click', onClick);
+galleryContainer.addEventListener('click', onClick);
 }
 // Функция отработки нажатия мышки
 function onClick(event) {
@@ -31,15 +31,15 @@ function onClick(event) {
 
 // Функция рендеринг модалки
 function modalMarkUp(card) {
-  refs.modalContainer.insertAdjacentHTML('beforeend', modalFilmTemplate(card));
+  modalContainer.insertAdjacentHTML('beforeend', modalFilmTemplate(card));
 }
 
 // Функция открытия модалки
 function modalOpenClick() {
   // Добавляем стиль is-open
-  refs.modalContainer.classList.add("is-open");
+  modalContainer.classList.add("is-open");
   // Снимаем слушатель с галереи
-  refs.galleryContainer.removeEventListener('click', onClick);
+  galleryContainer.removeEventListener('click', onClick);
   // Ставим слушатель на кнопку Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.addEventListener('click', modalClose);
@@ -48,12 +48,12 @@ function modalOpenClick() {
 // Функция закрытия модалки
 function modalClose() {
   // Удаляем стиль is-open
-  refs.modalContainer.classList.remove("is-open");
+  modalContainer.classList.remove("is-open");
   // Снимаем слушатель с кнопки Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.removeEventListener('click', modalClose);
   // Ставим слушатель на галерею
-  refs.galleryContainer.addEventListener('click', onClick);
+  galleryContainer.addEventListener('click', onClick);
   // Чистим модалку 
-  refs.modalContainer.innerHTML = '';
+  modalContainer.innerHTML = '';
 }

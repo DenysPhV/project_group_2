@@ -42,7 +42,6 @@ const pagination = new Pagination('#tui-pagination-container', options);
 
 const page = pagination.getCurrentPage();
 
-
 // Запрос в фетч и рендер карточек
 apiService.fetchTrending(1).then(res => {
   console.log(res);
@@ -55,6 +54,7 @@ apiService.fetchTrending(1).then(res => {
 // Функция пагинации
 pagination.on('afterMove', e => {
   const currentPage = e.page;
+  window.scrollTo(scrollX, 0);
 
   clearGallery();
   apiService.fetchTrending(currentPage).then(res => {
@@ -67,7 +67,6 @@ pagination.on('afterMove', e => {
 function renderGallery(data) {
   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
 }
-
 
 // Очистка галерии
 function clearGallery() {

@@ -25,6 +25,19 @@
   text-align: center;
   font-size: 0;
 }
+
+.pagination-thumb {
+  max-width: 280px;
+  height: 40px;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 768px) {
+    max-width: 374px;
+    margin-top: 50px;
+  }
+}
 .tui-pagination .tui-page-btn {
   display: flex;
   justify-content: center;

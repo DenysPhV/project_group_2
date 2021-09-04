@@ -3,6 +3,12 @@
   text-align: center;
   margin: 0 auto;
 
+  &-dev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &-lead {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -10,6 +16,24 @@
 
   &-icon {
     fill: #ff6b08;
+
+    margin-right: 5px;
+  }
+
+  &-btn {
+    background-color: transparent;
+    border: transparent;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  &-btn:hover,
+  &-btn:focus {
+    background-color: #f0efec;
+  }
+
+  &-it {
+    color: #ff6b08;
   }
 
   @media screen and (max-width: 767px) {
@@ -24,5 +48,14 @@
   // Контейнер для desktop
   @media screen and (min-width: 1024px) {
     width: 922px;
+
+    &-icon {
+      margin-right: 0px;
+      margin-left: 2px;
+    }
+
+    &-dev {
+      display: inline;
+    }
   }
 }

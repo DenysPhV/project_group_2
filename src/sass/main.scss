@@ -8,11 +8,13 @@
 // Базовые стили -> base
 @import './base/common';
 @import './base/container';
-@import './layout/header';
-@import './base/footer';
+
 @import './componets/pagination';
+
+@import './layout/header';
 @import './layout/section_main';
 @import './layout/modal-film';
+@import './layout/footer';
 
 // Секции и блоки -> layouts
 

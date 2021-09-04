@@ -20,7 +20,13 @@ function onClick(event) {
 
   // Запрос по id на сервер
   apiService.fetchMovieDetails(filmId).then(card => {
-    // console.log(card);
+    console.log(card);
+    // Проверяет количество жаров 
+    if (card.genres.length > 3) {
+      card.genres = card.genres.slice(0, 3);
+    }
+
+    
     // Запуск функции рендер модалки
     modalMarkUp(card);
     // Запуск функции открытия модалки

@@ -22,11 +22,9 @@
       url(../images/header-desktop-1024x230@1x.jpg);
   }
 
-
   //   &__container {
   //     outline: 1px solid red;
   //   }
-
 
   &__box {
     display: flex;
@@ -40,6 +38,7 @@
     border-bottom: 0.5px solid #ffffff;
     background-color: transparent;
     color: inherit;
+    height: 20px;
 
     &::placeholder {
       color: inherit;
@@ -102,14 +101,28 @@
     width: 336px;
   }
 
-  &::after {
+  // &::after {
+  //   position: absolute;
+  //   top: 0px;
+  //   right: 0px;
+  //   display: inline-block;
+  //   content: '';
+  //   width: 12px;
+  //   height: 12px;
+  //   background-image: url(../images/search.svg);
+  // }
+
+  & button {
+    height: 20px;
+    width: 20px;
     position: absolute;
-    top: 8.5px;
-    right: 5px;
-    display: inline-block;
-    content: '';
-    width: 12px;
-    height: 12px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border: none;
+    background-size: 15px;
+    background-color: inherit;
+    background-repeat: no-repeat;
     background-image: url(../images/search.svg);
   }
 }

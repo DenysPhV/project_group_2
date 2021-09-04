@@ -3,6 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import ApiService from './apiService';
 import cardsTemplate from '../templates/cards.hbs';
 import { galleryContainer } from './refs';
+import currentMovies from './currentMovies';
 
 // const Pagination = require('tui-pagination');
 // const Pagination = tui.Pagination;
@@ -42,7 +43,6 @@ const pagination = new Pagination('#tui-pagination-container', options);
 
 const page = pagination.getCurrentPage();
 
-
 // Запрос в фетч и рендер карточек
 apiService.fetchTrending(1).then(res => {
   console.log(res);
@@ -55,11 +55,13 @@ apiService.fetchTrending(1).then(res => {
 // Функция пагинации
 pagination.on('afterMove', e => {
   const currentPage = e.page;
+  window.scrollTo(scrollX, 0);
 
   clearGallery();
   apiService.fetchTrending(currentPage).then(res => {
     renderGallery(res.results);
     const li = document.querySelectorAll('.gallery__item');
+    currentMovies = cards.results;
   });
 });
 
@@ -67,7 +69,6 @@ pagination.on('afterMove', e => {
 function renderGallery(data) {
   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
 }
-
 
 // Очистка галерии
 function clearGallery() {

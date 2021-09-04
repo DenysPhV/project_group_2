@@ -4,16 +4,13 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 export default class ApiService {
   constructor() {
     this.searchQuery = '';
-    this.page = 1;
   }
   // это fetch для запроса популярных фильмов  на главную страницу
-  fetchTrending() {
-    return fetch(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`)
+  fetchTrending(page) {
+    return fetch(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`)
       .then(r => r.json())
       .then(data => {
-        this.page += 1;
-
-        return data.results;
+        return data;
       })
       .catch(error => console.log(error));
   }
@@ -36,10 +33,6 @@ export default class ApiService {
         return data.results;
       })
       .catch(error => console.log(error));
-  }
-
-  resetPage() {
-    this.page = 1;
   }
 
   get query() {

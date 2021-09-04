@@ -42,22 +42,24 @@ const pagination = new Pagination('#tui-pagination-container', options);
 
 const page = pagination.getCurrentPage();
 
-// // Запрос в фетч и рендер карточек
-apiService.fetchTrending(page).then(res => {
-  // console.log(res);
-  pagination.reset(res[1].total_pages);
-  renderGallery(res);
-  // const li = document.querySelectorAll('.gallery__item');
+
+// Запрос в фетч и рендер карточек
+apiService.fetchTrending(1).then(res => {
+  console.log(res);
+  pagination.reset(res.total_pages);
+  console.log(res.total_pages);
+  renderGallery(res.results);
+  const li = document.querySelectorAll('.gallery__item');
 });
 
 // Функция пагинации
-pagination.on('afterMove', event => {
-  const currentPage = event.page;
-  console.log('current', currentPage);
+pagination.on('afterMove', e => {
+  const currentPage = e.page;
 
+  clearGallery();
   apiService.fetchTrending(currentPage).then(res => {
-    renderGallery(res);
-    // const li = document.querySelectorAll('.gallery__item');
+    renderGallery(res.results);
+    const li = document.querySelectorAll('.gallery__item');
   });
 });
 
@@ -65,6 +67,7 @@ pagination.on('afterMove', event => {
 function renderGallery(data) {
   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
 }
+
 
 // Очистка галерии
 function clearGallery() {

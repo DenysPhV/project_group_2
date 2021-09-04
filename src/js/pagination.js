@@ -4,6 +4,9 @@ import ApiService from './apiService';
 import cardsTemplate from '../templates/cards.hbs';
 import { galleryContainer } from './refs';
 
+// const Pagination = require('tui-pagination');
+// const Pagination = tui.Pagination;
+
 const apiService = new ApiService();
 
 const container = document.getElementById('tui-pagination-container');
@@ -34,7 +37,8 @@ const options = {
   },
 };
 
-const pagination = new Pagination(container, options);
+// export { options };
+const pagination = new Pagination('#tui-pagination-container', options);
 
 const page = pagination.getCurrentPage();
 

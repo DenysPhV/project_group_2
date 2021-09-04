@@ -1,4 +1,4 @@
-import { inputText, galleryContainer, searchForm } from './refs.js';
+import { inputText, galleryContainer, searchForm, notification } from './refs.js';
 import ApiService from './apiService';
 import { cardsMarkUp } from './cards-mark-up';
 
@@ -13,18 +13,20 @@ function searchMovie(event) {
   inputFilm = inputValue.replace(/\s+/g, ' ').trim();
 
   if (inputFilm.length === 0) {
-    return alert('No matches found for your query. Enter the correct movie name.');
+    return (notification.textContent =
+      'No matches found for your query. Enter the correct movie name.');
   }
 
   apiService.query = inputFilm;
 
   if (inputFilm) {
+    notification.textContent = '';
     apiService
       .fetchMovies()
       .then(data => {
         console.log(data);
         if (data.length === 0) {
-          alert(`No results were found for "${inputFilm}".`);
+          notification.textContent = `No results were found for "${inputFilm}".`;
           inputText.value = '';
           return;
         }

@@ -48,6 +48,5 @@ export default class ApiService {
 
   set query(newQuery) {
     this.searchQuery = newQuery;
-  }  
+  }
 }
-

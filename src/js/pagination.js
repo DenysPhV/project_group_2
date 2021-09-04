@@ -38,30 +38,31 @@ const page = pagination.getCurrentPage();
 
 function movieBtn(li, res) {}
 
-// // Запрос в фетч и рендер карточек
-// apiService.fetchTrending(page).then(res => {
-//   // console.log(res);
-//   pagination.reset(res.total_pages);
-//   renderGallery(res);
-//   const li = document.querySelectorAll('.gallery__item');
-// });
+// Запрос в фетч и рендер карточек
+apiService.fetchTrending(1).then(res => {
+  console.log(res);
+  pagination.reset(res.total_pages);
+  console.log(res.total_pages);
+  renderGallery(res.results);
+  const li = document.querySelectorAll('.gallery__item');
+});
 
-// // Функция пагинации
-// pagination.on('afterMove', e => {
-//   const currentPage = e.page;
+// Функция пагинации
+pagination.on('afterMove', e => {
+  const currentPage = e.page;
 
-//   clearGallery();
-//   apiService.fetchTrending(currentPage).then(res => {
-//     renderGallery(res);
-//     const li = document.querySelectorAll('.gallery__item');
-//   });
-// });
+  clearGallery();
+  apiService.fetchTrending(currentPage).then(res => {
+    renderGallery(res.results);
+    const li = document.querySelectorAll('.gallery__item');
+  });
+});
 
-// // Рендер карточки
-// function renderGallery(data) {
-//   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
-// }
-// // Очистка галерии
-// function clearGallery() {
-//   galleryContainer.innerHTML = '';
-// }
+// Рендер карточки
+function renderGallery(data) {
+  galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
+}
+// Очистка галерии
+function clearGallery() {
+  galleryContainer.innerHTML = '';
+}

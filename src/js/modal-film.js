@@ -52,6 +52,11 @@ function modalOpenClick() {
   // Ставим слушатель на кнопку Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.addEventListener('click', modalClose);
+// Ставим слушатель на Overlay 
+  const refsOverlay = document.querySelector('.modal__backdrop');
+  refsOverlay.addEventListener("click", overlayClick);
+  // Ставим слушатель нажатых клавиш
+  window.addEventListener("keydown", pressKey);
 }
 
 // Функция закрытия модалки
@@ -63,8 +68,27 @@ function modalClose() {
   // Снимаем слушатель с кнопки Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.removeEventListener('click', modalClose);
+  // Снимаем слушатель overlay
+  const refsOverlay = document.querySelector('.modal__backdrop');
+  refsOverlay.removeEventListener("click", overlayClick);
+  // Снимаем слушатель клавиш
+  window.removeEventListener("keydown", pressKey);
   // Ставим слушатель на галерею
   galleryContainer.addEventListener('click', onClick);
   // Чистим модалку 
   modalContainer.innerHTML = '';
+}
+
+// Функция обработки Click на оверлей
+function overlayClick(event) {
+  if (event.currentTarget === event.target) {
+    modalClose();
+  }
+}
+
+// Фукция обработки нажатых клавиш
+function pressKey(event) {
+  if (event.key === "Escape") {
+    modalClose();
+  }
 }

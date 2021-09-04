@@ -1,20 +1,20 @@
-export default WatchedBtnLogic;
+// Цей скрипт відповідає за добавлення переглянутих фільмів у local storage
+
+export default watchedBtnLogic;
 import currentMovies from './currentMovies';
 const watchedMovies = [];
 
-function WatchedBtnLogic() {
+function watchedBtnLogic() {
   const watchedBtn = document.querySelector('.film__btnWatched');
   watchedBtn.addEventListener('click', onWatchedClick);
 
   let movies = currentMovies.movies;
-  console.log(currentMovies.movies);
 
   function onWatchedClick() {
     const movieID = watchedBtn.dataset.id;
 
     watchedMovies.push(
       movies.find(obj => {
-        console.log(obj.id, movieID);
         if (obj.id === Number(movieID)) {
           return obj;
         }

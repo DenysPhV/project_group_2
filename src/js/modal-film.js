@@ -1,39 +1,41 @@
-import { galleryContainer, modalContainer, body} from './refs.js';
+import { galleryContainer, modalContainer, body } from './refs.js';
 import modalFilmTemplate from '../templates/modal-film.hbs';
 import ApiService from './apiService';
+import watchedBtnLogic from './watchedBtn.js';
+import queueBtnLogic from './queueBtn.js';
 
-const apiService = new ApiService()
+const apiService = new ApiService();
 
-  
 export default function modalFilmBox() {
-galleryContainer.addEventListener('click', onClick);
+  galleryContainer.addEventListener('click', onClick);
 }
 // Функция отработки нажатия мышки
 function onClick(event) {
-  
- event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
+  event.preventDefault();
+  if (event.target.nodeName !== 'IMG') {
     return;
   }
-    const filmId = event.target.dataset.id;
+  const filmId = event.target.dataset.id;
   // console.log(filmId);
 
   // Запрос по id на сервер
   apiService.fetchMovieDetails(filmId).then(card => {
     console.log(card);
-    // Проверяет количество жаров 
+    // Проверяет количество жаров
     if (card.genres.length > 3) {
       card.genres = card.genres.slice(0, 3);
     }
     // Проверяет пришол ли постер фильма
-    (card.poster_path != null)?card.poster_path = 'https://www.themoviedb.org/t/p/w300' + card.poster_path : card.poster_path ='https://upload.wikimedia.org/wikipedia/commons/c/c2/No_image_poster.png';
+    card.poster_path != null
+      ? (card.poster_path = 'https://www.themoviedb.org/t/p/w300' + card.poster_path)
+      : (card.poster_path =
+          'https://upload.wikimedia.org/wikipedia/commons/c/c2/No_image_poster.png');
     console.log(card.poster_path);
     // Запуск функции рендер модалки
     modalMarkUp(card);
     // Запуск функции открытия модалки
     modalOpenClick();
-    });
-    
+  });
 }
 
 // Функция рендеринг модалки
@@ -44,38 +46,41 @@ function modalMarkUp(card) {
 // Функция открытия модалки
 function modalOpenClick() {
   // Добавляем стиль is-open
-  modalContainer.classList.add("is-open");
-    // Добавляем стиль modal-open - блокировка скрола
-  body.classList.add("modal-open");
+  modalContainer.classList.add('is-open');
+  // Добавляем стиль modal-open - блокировка скрола
+  body.classList.add('modal-open');
   // Снимаем слушатель с галереи
   galleryContainer.removeEventListener('click', onClick);
   // Ставим слушатель на кнопку Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.addEventListener('click', modalClose);
-// Ставим слушатель на Overlay 
+  // Ставим слушатель на Overlay
   const refsOverlay = document.querySelector('.modal__backdrop');
-  refsOverlay.addEventListener("click", overlayClick);
+  refsOverlay.addEventListener('click', overlayClick);
   // Ставим слушатель нажатых клавиш
-  window.addEventListener("keydown", pressKey);
+  window.addEventListener('keydown', pressKey);
+
+  watchedBtnLogic();
+  queueBtnLogic();
 }
 
 // Функция закрытия модалки
 function modalClose() {
   // Удаляем стиль is-open
-  modalContainer.classList.remove("is-open");
-    // Удаляем стиль modal-open 
-  body.classList.remove("modal-open");
+  modalContainer.classList.remove('is-open');
+  // Удаляем стиль modal-open
+  body.classList.remove('modal-open');
   // Снимаем слушатель с кнопки Close
   const modalBtnClose = document.querySelector('.close__button');
   modalBtnClose.removeEventListener('click', modalClose);
   // Снимаем слушатель overlay
   const refsOverlay = document.querySelector('.modal__backdrop');
-  refsOverlay.removeEventListener("click", overlayClick);
+  refsOverlay.removeEventListener('click', overlayClick);
   // Снимаем слушатель клавиш
-  window.removeEventListener("keydown", pressKey);
+  window.removeEventListener('keydown', pressKey);
   // Ставим слушатель на галерею
   galleryContainer.addEventListener('click', onClick);
-  // Чистим модалку 
+  // Чистим модалку
   modalContainer.innerHTML = '';
 }
 
@@ -88,7 +93,7 @@ function overlayClick(event) {
 
 // Фукция обработки нажатых клавиш
 function pressKey(event) {
-  if (event.key === "Escape") {
+  if (event.key === 'Escape') {
     modalClose();
   }
 }

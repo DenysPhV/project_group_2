@@ -1,8 +1,10 @@
-export default QueueBtnLogic;
+// Цей скрипт відповідає за добавлення фільмів у чергу і в local storage
+
+export default queueBtnLogic;
 import currentMovies from './currentMovies';
 const queuedMovies = [];
 
-function QueueBtnLogic() {
+function queueBtnLogic() {
   const queuedBtn = document.querySelector('.film__btnQueue');
   queuedBtn.addEventListener('click', onQueuedClick);
 
@@ -13,7 +15,6 @@ function QueueBtnLogic() {
 
     queuedMovies.push(
       movies.find(obj => {
-        console.log(obj.id, movieID);
         if (obj.id === Number(movieID)) {
           return obj;
         }

@@ -61,7 +61,7 @@ pagination.on('afterMove', e => {
   apiService.fetchTrending(currentPage).then(res => {
     renderGallery(res.results);
     const li = document.querySelectorAll('.gallery__item');
-    currentMovies = cards.results;
+    currentMovies.movies = res.results;
   });
 });
 

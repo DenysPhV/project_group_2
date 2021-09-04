@@ -1,6 +1,7 @@
 import { inputText, galleryContainer, searchForm, notification } from './refs.js';
 import ApiService from './apiService';
 import { cardsMarkUp } from './cards-mark-up';
+import currentMovies from './currentMovies.js';
 
 const apiService = new ApiService();
 
@@ -31,6 +32,7 @@ function searchMovie(event) {
           return;
         }
         resetSearch();
+        currentMovies.movies = data;
         return data;
       })
       .then(cardsMarkUp);

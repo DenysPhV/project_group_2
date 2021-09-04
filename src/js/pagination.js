@@ -3,6 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import ApiService from './apiService';
 import cardsTemplate from '../templates/cards.hbs';
 import { galleryContainer } from './refs';
+import currentMovies from './currentMovies';
 
 // const Pagination = require('tui-pagination');
 // const Pagination = tui.Pagination;
@@ -60,6 +61,7 @@ pagination.on('afterMove', e => {
   apiService.fetchTrending(currentPage).then(res => {
     renderGallery(res.results);
     const li = document.querySelectorAll('.gallery__item');
+    currentMovies = cards.results;
   });
 });
 

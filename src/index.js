@@ -1,6 +1,7 @@
 import './sass/main.scss';
 import './js/pagination';
 import './js/searchFilm';
+
 // ============== Импорт на pnotify ===================
 // import '@pnotify/core/dist/BrightTheme.css';
 // import '@pnotify/core/dist/PNotify.css';

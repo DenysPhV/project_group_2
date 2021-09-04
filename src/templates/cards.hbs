@@ -1,12 +1,17 @@
 {{#each this}}
-<li class="gallery__item">
-    <div class="movie-card">
-        <img class="poster"   src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt="" />
-        <div class="movie-details">
-            <p class="movie-name">{{original_title}}</p>
-            <p class="movie-info">{{genre_ids}} | {{release_date}}</p>
-        </div>
-    </div>
-</li>
-{{/each}}
+  <li class='gallery__item'>
+    <div class='movie-card'>
 
+      {{#if poster_path}}
+        <img class='poster' src='https://image.tmdb.org/t/p/w300{{poster_path}}' alt='Poster for film {{original_title}}' />
+      {{else}}
+        <img class='poster' src='../images/no_poster.png' alt='No poster available' />
+      {{/if}}
+
+      <div class='movie-details'>
+        <p class='movie-name'>{{original_title}}</p>
+        <p class='movie-info'>{{genre_ids}} | {{release_date}}</p>
+      </div>
+    </div>
+  </li>
+{{/each}}

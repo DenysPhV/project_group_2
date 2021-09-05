@@ -1,13 +1,26 @@
+@charset 'utf-8';
+.tui-pagination * {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tui-ico-ellipsis,
+.tui-ico-first,
+.tui-ico-last,
+.tui-ico-next,
+.tui-ico-prev {
+  overflow: hidden;
+}
+
 .pagination-thumb {
-  max-width: 280px;
   height: 40px;
   margin-top: 40px;
   margin-right: auto;
   margin-left: auto;
-
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     max-width: 374px;
-    margin-top: 50px;
   }
 }
 
@@ -24,8 +37,8 @@
 }
 
 .tui-pagination .tui-page-btn {
-  min-width: 40px;
-  height: 40px;
+  height: 35px;
+  width: 30px;
   padding: 13px 13px 11px;
   margin-left: 0;
   font-weight: 500;
@@ -35,12 +48,18 @@
   margin: 2px;
   background-color: #f7f7f7;
   color: #333;
+
+  @media screen and (max-width: 768px) {
+    max-width: 35px;
+    height: 30px;
+  }
 }
 
 .tui-pagination .tui-page-btn:hover,
 .tui-pagination .tui-page-btn:focus {
-  background-color: #ff6b08;
-  box-shadow: 0px 4px 4px #ff6b08;
+  background-color: #ff6b08 !important;
+  box-shadow: 0px 0px 8px 2px #af0909;
+  border: none;
 
   transition: box-shadow cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
@@ -78,7 +97,7 @@
   &:hover,
   :focus {
     background-color: #ff6b08;
-    box-shadow: 0px 4px 4px #ff6b08;
+    box-shadow: 0px 0px 8px 2px #af0909;
     cursor: pointer;
   }
 }
@@ -89,5 +108,5 @@
 .tui-is-selected {
   background-color: #ff6b08 !important;
   border-color: #ff6b08 !important;
-  border-radius: 5px;
+  border-radius: 8px;
 }

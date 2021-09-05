@@ -27,7 +27,7 @@ const arrFooterDev = [
   {
     name: 'Masha Shytykova',
     position: 'Developer',
-    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020SD6GU1F-g08e5134a824-512',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020SD6GU1F-5b19e948dcad-512',
   },
   {
     name: 'Oleksandr Boiko',

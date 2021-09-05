@@ -2,9 +2,15 @@
 
 export default queueBtnLogic;
 import currentMovies from './currentMovies';
-const queuedMovies = [];
+let queuedMovies = null;
 
 function queueBtnLogic() {
+  if (localStorage.getItem('Queued')) {
+    queuedMovies = JSON.parse(localStorage.getItem('Queued'));
+  } else {
+    queuedMovies = [];
+  }
+
   const queuedBtn = document.querySelector('.film__btnQueue');
   queuedBtn.addEventListener('click', onQueuedClick);
 
@@ -13,13 +19,21 @@ function queueBtnLogic() {
   function onQueuedClick() {
     const movieID = queuedBtn.dataset.id;
 
-    queuedMovies.push(
-      movies.find(obj => {
+    if (
+      !queuedMovies.find(obj => {
         if (obj.id === Number(movieID)) {
           return obj;
         }
-      }),
-    );
-    localStorage.setItem('Queued', JSON.stringify(queuedMovies));
+      })
+    ) {
+      queuedMovies.push(
+        movies.find(obj => {
+          if (obj.id === Number(movieID)) {
+            return obj;
+          }
+        }),
+      );
+      localStorage.setItem('Queued', JSON.stringify(queuedMovies));
+    }
   }
 }

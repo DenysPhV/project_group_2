@@ -26,11 +26,11 @@ export default class ApiService {
   }
 
   //это fetch для поиска фильмов по названию
-  fetchMovies() {
-    return fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${this.searchQuery}`)
+  fetchMovies(page) {
+    return fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&page=${page}&query=${this.searchQuery}`)
       .then(r => r.json())
       .then(data => {
-        return data.results;
+        return data; 
       })
       .catch(error => console.log(error));
   }

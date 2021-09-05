@@ -2,47 +2,47 @@ const arrFooterDev = [
   {
     name: 'Andrii Lypovetskyi',
     position: 'Developer',
-    preview: '../src/images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-ecec0c090036-512',
   },
   {
     name: 'Aleksandr Bondarenko',
     position: 'Developer',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020RDMUW20-fdbfb1884f9b-512',
   },
   {
-    name: 'DmytroMS',
+    name: 'Dmytro S.',
     position: 'Developer',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020ALA32Q5-442b8c87d6d3-512',
   },
   {
     name: 'Iliya Lunev',
     position: 'Scrum master',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020KTB155J-6d17af4c8085-512',
   },
   {
-    name: 'KMyroslav',
+    name: 'Myroslav Kuhtaruk',
     position: 'Developer',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020L0YFVPE-b8d72596946f-512',
   },
   {
     name: 'Masha Shytykova',
     position: 'Developer',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020SD6GU1F-g08e5134a824-512',
   },
   {
     name: 'Oleksandr Boiko',
     position: 'Developer',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0210K7SHR7-g6bd5d135bc9-512',
   },
   {
     name: 'Ruslan Kuzma',
     position: 'Developer',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01E40QL2LD-U01KVFMHD5M-d78aac37dda3-512',
   },
   {
     name: 'Denys Filichkin',
     position: 'Team lead',
-    preview: './images/pictures/thor.jpg',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020BQ51HE1-5e9ad54fc99b-512',
   },
 ];
 

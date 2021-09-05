@@ -60,9 +60,17 @@
 
     <footer class="footer__page">
       <div class="container">
-        <ul class="footer__page-list">
+        <!-- Спикок команды разработчиков по клику на кнопку -->
+        <div class="backdrop is-hidden" data-footer >
+          <section class="footer__page-container">
+           <ul class="footer__page-list list" >
           
-        </ul>
+          </ul>
+        <button type="button" data-footer-close>Bye Bye</button>
+          </section>
+       
+        </div>
+       
         <p class="footer__page-lead">
           &COPY; 2021 | All Rights Reserved | Developed with
           <span class="footer__page-dev">
@@ -70,9 +78,11 @@
               <use href="./images/heart.svg#heart"></use>
             </svg>
             <!-- <a href="#" class="footer__page-dev">by GoIT Students</a> -->
-            <button type="button" class="footer__page-btn">by Go <span class="footer__page-it">IT</span> Students</button>
+            <button type="button" class="footer__page-btn" data-footer-button>by Go <span class="footer__page-it">IT</span> Students</button>
             </span>
         </p>
+     
+      
       </div>
     </footer>
     <!-- Спиннер -->

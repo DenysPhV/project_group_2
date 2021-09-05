@@ -1,5 +1,3 @@
-import { footerBtn } from './refs';
-// const
 const arrFooterDev = [
   {
     name: 'Andrii Lypovetskyi',
@@ -44,6 +42,7 @@ arrFooterDev.map(({ name, position }, index) => {
   itemFooterDev.insertAdjacentHTML(
     'afterbegin',
     `<li class="footer__page-item">
+     
      <h3>${name}</h3>
      <p>${position}</p>
      </li>
@@ -51,4 +50,27 @@ arrFooterDev.map(({ name, position }, index) => {
   );
 });
 
-console.log(itemFooterDev);
+// console.log(itemFooterDev);
+
+(() => {
+  const refs = {
+    openFooterBtn: document.querySelector('[data-footer-button]'),
+    closeFooterBtn: document.querySelector('[data-footer-close]'),
+    footer: document.querySelector('[data-footer]'),
+  };
+
+  // закрыть по клику на ескейп
+  function pressKey(event) {
+    if (event.key === 'Escape') {
+      refs.footer.classList.remove('is-hidden');
+    }
+  }
+
+  function toggleModal() {
+    refs.footer.classList.toggle('is-hidden');
+  }
+
+  refs.openFooterBtn.addEventListener('click', toggleModal);
+  refs.closeFooterBtn.addEventListener('click', toggleModal);
+  refs.closeFooterBtn.removeEventListener('keydown', pressKey);
+})();

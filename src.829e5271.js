@@ -40,4 +40,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./apiService":"eQwa","./refs.js":"VyiV","./cards-mark-up":"PsHc","./libBtnRenderHeader":"kkva"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/pagination"),require("./js/searchFilm"),require("./js/footer");var e=t(require("./js/apiService")),r=t(require("./js/homeBtnRenderPage")),s=t(require("./templates/cards.hbs")),i=t(require("./js/refs.js")),u=t(require("./js/cards-mark-up.js")),a=t(require("./js/libBtnRenderHeader"));function t(e){return e&&e.__esModule?e:{default:e}}const n=new e.default;
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/searchFilm":"Td8I","./js/footer":"b5Ik","./js/apiService":"eQwa","./js/homeBtnRenderPage":"n7XZ","./templates/cards.hbs":"fpKt","./js/refs.js":"VyiV","./js/cards-mark-up.js":"PsHc","./js/libBtnRenderHeader":"kkva"}]},{},["Focm"], null)
-//# sourceMappingURL=/project_group_2/src.2fb8050d.js.map
+//# sourceMappingURL=/project_group_2/src.829e5271.js.map

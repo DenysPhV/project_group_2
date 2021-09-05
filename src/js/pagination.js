@@ -7,9 +7,6 @@ import currentMovies from './currentMovies';
 import { target, spinner } from './spinner.js';
 import '../../node_modules/spin.js/spin.css';
 
-// const Pagination = require('tui-pagination');
-// const Pagination = tui.Pagination;
-
 const apiService = new ApiService();
 
 // Опции для отрисовки пагинации с документации
@@ -43,9 +40,7 @@ const pagination = new Pagination('#tui-pagination-container', options);
 
 // Запрос в фетч и рендер карточек
 apiService.fetchTrending(1).then(res => {
-  console.log(res);
   pagination.reset(res.total_pages);
-  console.log(res.total_pages);
   renderGallery(res.results);
 });
 
@@ -72,5 +67,3 @@ function renderGallery(data) {
 function clearGallery() {
   galleryContainer.innerHTML = '';
 }
-
-document;

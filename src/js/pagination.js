@@ -4,13 +4,11 @@ import ApiService from './apiService';
 import cardsTemplate from '../templates/cards.hbs';
 import { galleryContainer } from './refs';
 import currentMovies from './currentMovies';
-
-// const Pagination = require('tui-pagination');
-// const Pagination = tui.Pagination;
+import { target, spinner } from './spinner.js';
+import '../../node_modules/spin.js/spin.css';
 
 const apiService = new ApiService();
 
-const container = document.getElementById('tui-pagination-container');
 // Опции для отрисовки пагинации с документации
 const options = {
   totalItems: 1000,
@@ -38,30 +36,25 @@ const options = {
   },
 };
 
-// export { options };
 const pagination = new Pagination('#tui-pagination-container', options);
-
-const page = pagination.getCurrentPage();
 
 // Запрос в фетч и рендер карточек
 apiService.fetchTrending(1).then(res => {
-  console.log(res);
   pagination.reset(res.total_pages);
-  console.log(res.total_pages);
   renderGallery(res.results);
-  const li = document.querySelectorAll('.gallery__item');
 });
 
 // Функция пагинации
 pagination.on('afterMove', e => {
+  spinner.spin(target);
   const currentPage = e.page;
   window.scrollTo(scrollX, 0);
 
   clearGallery();
   apiService.fetchTrending(currentPage).then(res => {
     renderGallery(res.results);
-    const li = document.querySelectorAll('.gallery__item');
     currentMovies.movies = res.results;
+    setTimeout(() => spinner.stop(), 1000);
   });
 });
 
@@ -74,5 +67,3 @@ function renderGallery(data) {
 function clearGallery() {
   galleryContainer.innerHTML = '';
 }
-
-document;

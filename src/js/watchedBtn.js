@@ -2,9 +2,15 @@
 
 export default watchedBtnLogic;
 import currentMovies from './currentMovies';
-const watchedMovies = [];
+let watchedMovies = null;
 
 function watchedBtnLogic() {
+  if (localStorage.getItem('Watched')) {
+    watchedMovies = JSON.parse(localStorage.getItem('Watched'));
+  } else {
+    watchedMovies = [];
+  }
+
   const watchedBtn = document.querySelector('.film__btnWatched');
   watchedBtn.addEventListener('click', onWatchedClick);
 
@@ -13,13 +19,21 @@ function watchedBtnLogic() {
   function onWatchedClick() {
     const movieID = watchedBtn.dataset.id;
 
-    watchedMovies.push(
-      movies.find(obj => {
+    if (
+      !watchedMovies.find(obj => {
         if (obj.id === Number(movieID)) {
           return obj;
         }
-      }),
-    );
-    localStorage.setItem('Watched', JSON.stringify(watchedMovies));
+      })
+    ) {
+      watchedMovies.push(
+        movies.find(obj => {
+          if (obj.id === Number(movieID)) {
+            return obj;
+          }
+        }),
+      );
+      localStorage.setItem('Watched', JSON.stringify(watchedMovies));
+    }
   }
 }

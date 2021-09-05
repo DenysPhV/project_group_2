@@ -1,9 +1,14 @@
 .header {
   padding-top: 46px;
-  padding-bottom: 88px;
+  padding-bottom: 61px;
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;
+
+  &__link {
+    display: flex;
+    align-items: flex-end;
+  }
 
   &__main-bg-js {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
@@ -39,10 +44,6 @@
     min-width: 320px;
   }
 
-  //   &__container {
-  //     outline: 1px solid red;
-  //   }
-
   &__box {
     display: flex;
     align-items: flex-end;
@@ -56,6 +57,7 @@
     color: inherit;
     height: 20px;
     font-size: 14px;
+    border-bottom: 0.5px solid #ffffff;
 
     &::placeholder {
       color: inherit;
@@ -84,6 +86,46 @@
       display: inline;
     }
   }
+
+  &__btn-box {
+    @media screen and (min-width: 768px) {
+      padding: 0 28px;
+    }
+  }
+
+  &__watch-btn,
+  &__queue-btn {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.35;
+    padding: 13px 36px;
+    color: #ffffff;
+    width: 130px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0px 0px 8px 2px #af0909;
+    }
+
+    &_active {
+      background-color: #ff6b01;
+      border-color: #ff6b01;
+
+      &:hover,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__queue-btn {
+    margin-left: 20px;
+  }
 }
 
 .nav-menu {
@@ -102,6 +144,15 @@
     background-color: transparent;
     color: inherit;
 
+    &_hover:hover {
+      box-shadow: 0px 0px 10px 2px #af0909;
+      border-radius: 5px;
+    }
+
+    &_active:hover {
+      box-shadow: none;
+    }
+
     &_active::after {
       position: absolute;
       content: '';
@@ -110,12 +161,8 @@
       height: 3px;
       background-color: #ff6b08;
     }
-
-    &:hover,
-    &:focus {
-      color: rgba(255, 255, 255, 0.5);
-    }
   }
+
   &__btn:not(:last-child) {
     margin-right: 40px;
   }
@@ -124,24 +171,21 @@
 .input-wrap {
   position: relative;
   display: block;
-  margin: 41px auto 22px;
+  margin: 41px auto 0;
   width: 280px;
   height: 20px;
-  border-bottom: 0.5px solid #ffffff;
+
   @media screen and (min-width: 768px) {
     width: 336px;
   }
-    
-    & button {
-    height: 20px;
-    width: 20px;
-  }
-  
 
   &_searchIcon::after {
+    content: '';
+    width: 12px;
+    height: 12px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
     cursor: pointer;
     border: none;
     background-position: center;
@@ -187,6 +231,8 @@
   }
 }
 .notification {
+  height: 16px;
+  margin-top: 22px;
   text-align: center;
   font-size: 14px;
   line-height: 1.17;

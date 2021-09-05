@@ -4,6 +4,7 @@ import ApiService from './apiService';
 import { homeBtnEl, logoEl, libBtnEl, headerEl, searchForm, galleryContainer } from './refs.js';
 import { cardsMarkUp } from './cards-mark-up';
 import { renderLibHeaderOnClick } from './libBtnRenderHeader';
+import currentMovies from './currentMovies';
 
 const apiService = new ApiService();
 
@@ -20,6 +21,7 @@ export const renderMainPageOnClick = e => {
   apiService
     .fetchTrending(1)
     .then(data => {
+      currentMovies.movies = data.results; //MK
       return data.results;
     })
     .then(cardsMarkUp);

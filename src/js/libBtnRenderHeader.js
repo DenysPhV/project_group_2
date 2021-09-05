@@ -1,5 +1,6 @@
 import { homeBtnEl, logoEl, libBtnEl, headerEl, searchForm } from './refs.js';
 import { renderMainPageOnClick, renderInputOnClick } from './homeBtnRenderPage';
+import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns.js'; //MK
 
 export const renderLibHeaderOnClick = () => {
   libBtnEl.classList.add('nav-menu__btn_active');
@@ -29,6 +30,7 @@ const changeBgcLibBtn = () => {
   const onWatchClick = () => {
     watchBtnEl.classList.add('header__watch-btn_active');
     queueBtnEl.classList.remove('header__queue-btn_active');
+    onWatchedBtnClick(); //MK
     watchBtnEl.removeEventListener('click', onWatchClick);
     queueBtnEl.addEventListener('click', onQueueClick);
   };
@@ -36,6 +38,7 @@ const changeBgcLibBtn = () => {
   const onQueueClick = () => {
     queueBtnEl.classList.add('header__queue-btn_active');
     watchBtnEl.classList.remove('header__watch-btn_active');
+    onQueueBtnClick(); //MK
     watchBtnEl.addEventListener('click', onWatchClick);
     queueBtnEl.removeEventListener('click', onQueueClick);
   };

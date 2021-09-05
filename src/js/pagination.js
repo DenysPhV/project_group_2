@@ -11,7 +11,7 @@ import '../../node_modules/spin.js/spin.css';
 // const Pagination = tui.Pagination;
 
 const apiService = new ApiService();
-spinner.spin(target);
+
 // Опции для отрисовки пагинации с документации
 const options = {
   totalItems: 1000,
@@ -47,7 +47,6 @@ apiService.fetchTrending(1).then(res => {
   pagination.reset(res.total_pages);
   console.log(res.total_pages);
   renderGallery(res.results);
-  spinner.stop();
 });
 
 // Функция пагинации
@@ -60,7 +59,7 @@ pagination.on('afterMove', e => {
   apiService.fetchTrending(currentPage).then(res => {
     renderGallery(res.results);
     currentMovies.movies = res.results;
-    spinner.stop();
+    setTimeout(() => spinner.stop(), 1000);
   });
 });
 

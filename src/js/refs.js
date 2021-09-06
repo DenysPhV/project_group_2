@@ -9,3 +9,4 @@ export const searchForm = document.querySelector('.input-wrap');
 export const notification = document.querySelector('.notification');
 export const modalContainer = document.querySelector('.modal');
 export const body = document.querySelector('body');
+export const paginationReset = document.querySelector('#tui-pagination-container');

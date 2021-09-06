@@ -125,3 +125,13 @@
   border-color: #ff6b08 !important;
   border-radius: 8px;
 }
+
+body.dark-theme .tui-pagination .tui-page-btn {
+  background-color: #ff6b08;
+  border: none;
+  border-radius: 8px;
+}
+
+body.dark-theme .tui-is-selected {
+  box-shadow: 0px 0px 8px 2px #af0909;
+}

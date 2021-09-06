@@ -144,12 +144,14 @@
     background-color: transparent;
     color: inherit;
 
-    &_hover:hover {
+    &_hover:hover,
+    &_hover:focus {
       box-shadow: 0px 0px 10px 2px #af0909;
       border-radius: 5px;
     }
 
-    &_active:hover {
+    &_active:hover,
+    &_active:focus {
       box-shadow: none;
     }
 

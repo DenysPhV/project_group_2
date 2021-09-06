@@ -53,16 +53,13 @@
     margin-right: 5px;
   }
 
-  &-btn {
+  &-link {
     background-color: transparent;
     border: transparent;
     border-radius: 2px;
     cursor: pointer;
-  }
 
-  &-btn:hover,
-  &-btn:focus {
-    background-color: #f0efec;
+    color: inherit;
   }
 
   &-it {

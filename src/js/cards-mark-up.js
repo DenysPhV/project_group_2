@@ -20,29 +20,25 @@ import currentMovies from './currentMovies.js';
 
 export function cardsMarkUp(cards) {
   const apiService = new ApiService();
-
+  // Запрос списка жанров
   apiService.fetchGenre().then(genres => {
-    // console.log(genres);
-    localStorage.setItem('genres', JSON.stringify(genres));
-  });
-  // Читаем из локал сторадж
-  const savedSettings = localStorage.getItem('genres');
-  const parsedSettings = JSON.parse(savedSettings);
-  console.log(cards);
-  cards.forEach((card, i) => {
-    card.release_date = card.release_date.substring(0, 4);
-    // Обрезаем жанры
-    if (card.genre_ids.length > 3) {
-      card.genre_ids = card.genre_ids.slice(0, 3);
-    }
-
-    card.genre_ids.forEach((genre, index) => {
-      parsedSettings.forEach(genrCard => {
-        if (genrCard.id === genre) card.genre_ids[index] = genrCard.name;
+    cards.forEach((card, i) => {
+      card.release_date = card.release_date.substring(0, 4);
+      // Обрезаем жанры
+      if (card.genre_ids.length > 3) {
+        card.genre_ids = card.genre_ids.slice(0, 3);
+      }
+      // Подменяем названия в genre_ids
+      card.genre_ids.forEach((genre, index) => {
+        genres.forEach(genrCard => {
+          if (genrCard.id === genre) card.genre_ids[index] = genrCard.name;
+        });
       });
     });
+    // Рендер галереи
+    galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
+    modalFilmBox();
+    currentMovies.movies = cards;
   });
-  galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
-  modalFilmBox();
-  currentMovies.movies = cards;
+  // console.log(cards);
 }

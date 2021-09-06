@@ -27,10 +27,21 @@ export default class ApiService {
 
   //это fetch для поиска фильмов по названию
   fetchMovies(page) {
-    return fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&page=${page}&query=${this.searchQuery}`)
+    return fetch(
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&page=${page}&query=${this.searchQuery}`,
+    )
       .then(r => r.json())
       .then(data => {
-        return data; 
+        return data;
+      })
+      .catch(error => console.log(error));
+  }
+  //это fetch для загрузки жанров
+  fetchGenre() {
+    return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+      .then(r => r.json())
+      .then(data => {
+        return data.genres;
       })
       .catch(error => console.log(error));
   }

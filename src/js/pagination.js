@@ -6,6 +6,7 @@ import { galleryContainer } from './refs';
 import currentMovies from './currentMovies';
 import { target, spinner } from './spinner.js';
 import '../../node_modules/spin.js/spin.css';
+import { cardsMarkUp } from './cards-mark-up';
 
 const apiService = new ApiService();
 
@@ -41,7 +42,7 @@ const pagination = new Pagination('#tui-pagination-container', options);
 // Запрос в фетч и рендер карточек
 apiService.fetchTrending(1).then(res => {
   pagination.reset(res.total_pages);
-  renderGallery(res.results);
+  cardsMarkUp(res.results);
 });
 
 // Функция пагинации
@@ -52,16 +53,16 @@ pagination.on('afterMove', e => {
 
   clearGallery();
   apiService.fetchTrending(currentPage).then(res => {
-    renderGallery(res.results);
+    cardsMarkUp(res.results);
     currentMovies.movies = res.results;
     setTimeout(() => spinner.stop(), 1000);
   });
 });
 
 // Рендер карточки
-function renderGallery(data) {
-  galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
-}
+// function renderGallery(data) {
+//   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
+// }
 
 // Очистка галерии
 function clearGallery() {

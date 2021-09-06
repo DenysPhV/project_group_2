@@ -19,6 +19,6 @@ import homeBtnRenderPage from './js/homeBtnRenderPage';
 
 import cardsTemplate from './templates/cards.hbs';
 import refs from './js/refs.js';
-import cardsMarkUp from './js/cards-mark-up.js';
+// import cardsMarkUp from './js/cards-mark-up.js';
 
 import libBtnRenderHeader from './js/libBtnRenderHeader';

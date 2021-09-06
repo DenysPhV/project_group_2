@@ -1,4 +1,4 @@
-import { homeBtnEl, logoEl, libBtnEl, headerEl, searchForm } from './refs.js';
+import { homeBtnEl, logoEl, libBtnEl, headerEl, searchForm, notification } from './refs.js';
 import { renderMainPageOnClick, renderInputOnClick } from './homeBtnRenderPage';
 import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns.js'; //MK
 
@@ -8,6 +8,7 @@ export const renderLibHeaderOnClick = () => {
   homeBtnEl.classList.remove('nav-menu__btn_active');
   headerEl.classList.replace('header__main-bg-js', 'header__lib-bg-js');
   searchForm.classList.remove('input-wrap_searchIcon');
+  notification.textContent = '';
 
   const markUp =
     '<div class="header__btn-box"><button class="header__watch-btn" type="button">Watched</button><button class="header__queue-btn" type="button">queue</button></div>';

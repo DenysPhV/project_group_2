@@ -1,4 +1,12 @@
-import { homeBtnEl, logoEl, libBtnEl, headerEl, searchForm, notification } from './refs.js';
+import {
+  homeBtnEl,
+  logoEl,
+  libBtnEl,
+  headerEl,
+  searchForm,
+  notification,
+  paginationReset,
+} from './refs.js';
 import { renderMainPageOnClick, renderInputOnClick } from './homeBtnRenderPage';
 import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns.js'; //MK
 
@@ -34,6 +42,7 @@ const changeBgcLibBtn = () => {
     onWatchedBtnClick(); //MK
     watchBtnEl.removeEventListener('click', onWatchClick);
     queueBtnEl.addEventListener('click', onQueueClick);
+    paginationReset.innerHTML = '';
   };
 
   const onQueueClick = () => {
@@ -42,6 +51,7 @@ const changeBgcLibBtn = () => {
     onQueueBtnClick(); //MK
     watchBtnEl.addEventListener('click', onWatchClick);
     queueBtnEl.removeEventListener('click', onQueueClick);
+    paginationReset.innerHTML = '';
   };
 
   watchBtnEl.addEventListener('click', onWatchClick);

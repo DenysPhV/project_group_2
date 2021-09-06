@@ -17,7 +17,7 @@ export function cardsMarkUp(cards) {
       // Подменяем названия в genre_ids
       card.genre_ids.forEach((genre, index) => {
         genres.forEach(genrCard => {
-          if (genrCard.id === genre) card.genre_ids[index] = genrCard.name;
+          if (genrCard.id === genre) card.genre_ids[index] = " " + genrCard.name; 
         });
       });
     });

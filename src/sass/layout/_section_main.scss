@@ -1,29 +1,139 @@
-.section_main {
-  padding: 60px 0px;
+@media screen and (max-width: 768px) {
+  .section_main {
+    padding: 20px 0px;
+  }
+
+  .poster {
+    width: 280px;
+    height: 398px;
+  }
+
+  .gallery__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .movie-details {
+    margin-top: 10px;
+  }
+
+  .movie-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .movie-info {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.34;
+    color: #ff6b08;
+  }
+
+  .poster {
+    width: 274px;
+    height: 398px;
+  }
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -20px;
-  margin-top: -20px;
-  margin-right: 0;
-  margin-bottom: 0;
+@media screen and (min-width: 768px) {
+  .section_main {
+    padding: 60px 0px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .gallery__item {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+    flex-basis: calc(100% / 2 - 30px);
+    max-width: 274px;
+  }
+
+  .movie-details {
+    margin-top: 10px;
+  }
+
+  .movie-name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .movie-info {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.34;
+    color: #ff6b08;
+  }
+
+  .poster {
+    width: 274px;
+    height: 398px;
+  }
 }
 
-.gallery__item {
-  display: flex;
-  margin-left: 20px;
-  margin-top: 20px;
-  flex-basis: calc(100% / 3 - 20px);
-  max-width: 274px;
+@media screen and (min-width: 1020px) {
+  .section_main {
+    padding: 60px 0px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-top: -20px;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .gallery__item {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+    flex-basis: calc(100% / 3 - 20px);
+    max-width: 274px;
+  }
+
+  .movie-details {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.34;
+    margin-top: 10px;
+  }
+
+  .movie-name {
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .movie-info {
+    color: #ff6b08;
+  }
+
+  .poster {
+    width: 274px;
+    height: 398px;
+  }
 }
-
-// .movie-card {
-//   display: block;
-// }
-
-// .poster {
-//   // display: block;
-//   max-width: 274px;
-// }

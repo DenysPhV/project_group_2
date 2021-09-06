@@ -4,20 +4,22 @@
   margin: 0 auto;
 
   &-container {
-    position: relative;
-    top: 50%;
+    position: absolute;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+
+    overflow-x: scroll;
+
     background-color: #ffffff;
     width: 80%;
 
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   &-list {
-    display: flex;
-    flex-wrap: wrap;
+    overflow: scroll;
   }
 
   &-item {
@@ -30,6 +32,7 @@
 
   &-images {
     outline: 1px solid tomato;
+
     margin-bottom: 20px;
   }
 
@@ -73,6 +76,19 @@
   // Контейнер для tablet
   @media screen and (min-width: 768px) {
     width: 658px;
+
+    &-container {
+      margin: 0 auto;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      flex-basis: calc((100% - 3 * 30px) / 3);
+    }
   }
 
   // Контейнер для desktop

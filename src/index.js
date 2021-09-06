@@ -11,9 +11,9 @@ import './js/footer';
 // ================= debounce ==========================
 // const debounce = require('lodash.debounce');
 
-import ApiService from './js/apiService';
+// import ApiService from './js/apiService';
 
-const apiService = new ApiService();
+// const apiService = new ApiService();
 
 import homeBtnRenderPage from './js/homeBtnRenderPage';
 

@@ -51,7 +51,7 @@ arrFooterDev.map(({ name, position, preview }, index) => {
   itemFooterDev.insertAdjacentHTML(
     'afterbegin',
     `<li class="footer__page-item">
-    <img class="footer__page-images" src="${preview}" alt="${name}" width="200px">
+    <img class="footer__page-images" src="${preview}" alt="${name}" >
      <h3>${name}</h3>
      <p>${position}</p>
      </li>

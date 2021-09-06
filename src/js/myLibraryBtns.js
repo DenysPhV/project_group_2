@@ -4,7 +4,7 @@ import { galleryContainer } from './refs.js';
 import cardsTemplate from '../templates/cards.hbs';
 import currentMovies from './currentMovies.js';
 
-export { onWatchedBtnClick, onQueueBtnClick };
+export { onWatchedBtnClick, onQueueBtnClick, createCards };
 
 function onWatchedBtnClick() {
   const cards = JSON.parse(localStorage.getItem('Watched'));

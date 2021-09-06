@@ -23,19 +23,53 @@
   </head>
 
   <body>
+     
     <header class="header header__main-bg-js">
+
       <div class="container header__container">
+    
         <div class="header__box">
+          
           <a class="header__link link-style logo-js" href=""
             ><img class="header__logo" src="./images/film.svg" alt="logo" />
             <span class="header__logo-text">Filmoteka</span>
           </a>
 
           <nav class="nav-menu">
+            
             <button class="nav-menu__btn nav-menu__btn_active home-btn-js" type="button">
               Home
             </button>
             <button class="nav-menu__btn lib-btn-js nav-menu__btn_hover" type="button">my library</button>
+                  <div class="toolbar">
+
+      <div class="theme-switch">
+        <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+          <use href="./images/sprite.svg#sun"></use>
+        </svg>
+
+        <div class="theme-switch__control">
+          <input
+            class="theme-switch__toggle"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Переключить между тёмной и светлой темой"
+          />
+          <label
+            aria-hidden="true"
+            class="theme-switch__track"
+            for="theme-switch-toggle"
+          >
+          </label>
+          <div aria-hidden="true" class="theme-switch__marker"></div>
+        </div>
+
+        <svg class="theme-switch__icon" aria-label="Иконка луны">
+          <use href="./images/sprite.svg#moon"></use>
+        </svg>
+      </div>
+    </div>
           </nav>
         </div>
 
@@ -46,6 +80,7 @@
         <p class="notification"></p>
     
     </header>
+    
 
     <div class="container">
       <main class="main__page">
@@ -61,14 +96,14 @@
     <footer class="footer__page">
       <div class="container">
         <!-- Спиcок команды разработчиков по клику на кнопку -->
-        <div class="backdrop is-hidden" data-footer >
+        <!-- <div class="backdrop is-hidden" data-footer >
           <section class="footer__page-container">
            <ul class="footer__page-list list" >
           
           </ul>
      
         <button type="button" data-footer-close>Bye Bye</button>
-          </section >
+          </section > -->
        
         </div>
        
@@ -79,8 +114,8 @@
               <use href="./images/heart.svg#heart"></use>
             </svg>
             <!-- <a href="#" class="footer__page-dev">by GoIT Students</a> -->
-            <button type="button" class="footer__page-btn" data-footer-button>by Go <span class="footer__page-it">IT</span> Students</button>
-            </span>
+            <a href="#" class="footer__page-link link-style" data-footer-button>by Go <span class="footer__page-it">IT</span> Students</span>
+            </a>
         </p>
      
       

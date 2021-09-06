@@ -10,12 +10,14 @@
 @import './base/container';
 
 @import './componets/pagination';
+@import './componets/theme';
 
+// Секции и блоки -> layouts
 @import './layout/header';
 @import './layout/section_main';
 @import './layout/modal-film';
 @import './layout/footer';
-
+@import './layout/modal-footer';
 // Секции и блоки -> layouts
 
 // Компоненты -> components

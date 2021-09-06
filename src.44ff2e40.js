@@ -46,4 +46,4 @@ const e=[{name:"Andrii Lypovetskyi",position:"Developer",preview:"https://ca.sla
 },{"./apiService":"eQwa","./refs.js":"VyiV","./cards-mark-up":"PsHc","./libBtnRenderHeader":"kkva","./currentMovies":"NQfV","tui-pagination":"jPMh","./pagination":"o8lo","./spinner.js":"Sc1o"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/pagination"),require("./js/searchFilm"),require("./js/footer");var e=u(require("./js/homeBtnRenderPage")),r=u(require("./templates/cards.hbs")),s=u(require("./js/refs.js")),i=u(require("./js/libBtnRenderHeader"));function u(e){return e&&e.__esModule?e:{default:e}}
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/searchFilm":"Td8I","./js/footer":"b5Ik","./js/homeBtnRenderPage":"n7XZ","./templates/cards.hbs":"fpKt","./js/refs.js":"VyiV","./js/libBtnRenderHeader":"kkva"}]},{},["Focm"], null)
-//# sourceMappingURL=/project_group_2/src.9ab6fca3.js.map
+//# sourceMappingURL=/project_group_2/src.44ff2e40.js.map

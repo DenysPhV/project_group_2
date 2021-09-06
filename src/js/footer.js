@@ -2,12 +2,12 @@ const arrFooterDev = [
   {
     name: 'Andrii Lypovetskyi',
     position: 'Developer',
-    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-ecec0c090036-512',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-4d63a7b43c4f-512',
   },
   {
     name: 'Aleksandr Bondarenko',
     position: 'Developer',
-    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020RDMUW20-fdbfb1884f9b-512',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020RDMUW20-57b717892067-512',
   },
   {
     name: 'Dmytro S.',
@@ -32,7 +32,7 @@ const arrFooterDev = [
   {
     name: 'Oleksandr Boiko',
     position: 'Developer',
-    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0210K7SHR7-g6bd5d135bc9-512',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0210K7SHR7-e237547f4c4f-512',
   },
   {
     name: 'Ruslan Kuzma',
@@ -58,26 +58,3 @@ arrFooterDev.map(({ name, position, preview }, index) => {
   `,
   );
 });
-
-// console.log(itemFooterDev);
-(() => {
-  const refs = {
-    openFooterBtn: document.querySelector('[data-footer-button]'),
-    closeFooterBtn: document.querySelector('[data-footer-close]'),
-    footer: document.querySelector('[data-footer]'),
-  };
-
-  refs.openFooterBtn.addEventListener('click', toggleModal);
-  refs.closeFooterBtn.addEventListener('click', toggleModal);
-
-  // закрыть по клику на ескейп
-  // function pressKey(event) {
-  //   if (event.key === 'Escape') {
-  //     refs.footer.classList.remove('is-hidden');
-  //   }
-  // }
-
-  function toggleModal() {
-    refs.footer.classList.toggle('is-hidden');
-  }
-})();

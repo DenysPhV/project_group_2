@@ -96,16 +96,7 @@
     <footer class="footer__page">
       <div class="container">
         <!-- Спиcок команды разработчиков по клику на кнопку -->
-        <!-- <div class="backdrop is-hidden" data-footer >
-          <section class="footer__page-container">
-           <ul class="footer__page-list list" >
-          
-          </ul>
-     
-        <button type="button" data-footer-close>Bye Bye</button>
-          </section > -->
-       
-        </div>
+        
        
         <p class="footer__page-lead">
           &COPY; 2021 | All Rights Reserved | Developed with
@@ -114,7 +105,7 @@
               <use href="./images/heart.svg#heart"></use>
             </svg>
             <!-- <a href="#" class="footer__page-dev">by GoIT Students</a> -->
-            <a href="#" class="footer__page-link link-style" data-footer-button>by Go <span class="footer__page-it">IT</span> Students</span>
+            <a href="#" class="footer__page-link link-style" data-modal-open >by Go <span class="footer__page-it">IT</span> Students</span>
             </a>
         </p>
      
@@ -127,6 +118,18 @@
     <div class="modal">
     </div>
     <!-- модалка конец -->
+
+    <!-- footer-modal -->
+    <div class="footer-modal is-hidden" data-modal >
+          <section class="footer-modal__window">
+           <ul class=" footer-modal__list list" >
+          
+          </ul>
+          
+          </section >
+       <button type="button" class="footer-modal__btn header__watch-btn" data-modal-close>Bye Bye</button>
+    </div>
+    <!-- end footer modal -->
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>

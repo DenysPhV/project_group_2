@@ -1,0 +1,96 @@
+//hystmodal
+.footer-modal {
+  color: #545454;
+  font-size: 16px;
+  line-height: 1.18;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 99;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &__window {
+    // outline: 1px solid tomato;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    overflow-y: auto;
+
+    background-color: rgba(129, 18, 18, 0.774);
+    padding-top: 20px;
+
+    transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+    transform: scale(1);
+  }
+
+  // список подгружаемый с помощью js
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 50%;
+    height: 100vh;
+
+    margin-top: -15px;
+    margin-left: -15px;
+  }
+
+  &__item {
+    // outline: 1px solid tomato;
+    align-self: center;
+    padding-top: 1%;
+
+    flex-basis: calc((100% - 2 * 15px) / 2);
+    margin-top: 15px;
+    margin-left: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 7px;
+    background: #ffffff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &__item h3 {
+    font-weight: 500;
+  }
+
+  &__images {
+    // border: 1px solid;
+    border-radius: 5px;
+    max-width: 95%;
+
+    margin: auto;
+  }
+
+  &__desc {
+    text-align: center;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  // кнопка закрытия
+  &__btn {
+    position: fixed;
+
+    top: 10%;
+    left: 10%;
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}

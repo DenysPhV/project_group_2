@@ -1,53 +1,13 @@
 .footer__page {
   //   outline: 1px solid tomato;
+  color: #545454;
+  font-size: 16px;
+  line-height: 1.18;
   text-align: center;
   margin: 0 auto;
 
-  &-container {
-    display: flex;
-
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    background-color: #ffffff;
-
-    padding: 15px;
-
-    margin: 0 auto;
-  }
-
-  &-list {
-    overflow: hidden;
-    margin: 0 auto;
-  }
-
-  &-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  &-images {
-    // outline: 1px solid tomato;
-
-    margin-bottom: 20px;
-
-    border-radius: 5px;
-  }
-
-  &-lead {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  &-dev {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  padding-top: 30px;
+  padding-bottom: 30px;
 
   &-icon {
     fill: #ff6b08;

@@ -39,6 +39,11 @@
     width: 280px;
     height: 402px;
   }
+
+  body.dark-theme .movie-name {
+    text-transform: uppercase;
+    color: #fff;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -90,6 +95,11 @@
     width: 293px;
     height: 398px;
   }
+
+  body.dark-theme .movie-name {
+    text-transform: uppercase;
+    color: #fff;
+  }
 }
 
 @media screen and (min-width: 1020px) {
@@ -104,6 +114,12 @@
     margin-top: -20px;
     margin-right: 0;
     margin-bottom: 0;
+  }
+
+  .gallery__item:hover,
+  .gallery__item:focus {
+    cursor: pointer;
+    box-shadow: 10px 10px 10px #f54803;
   }
 
   .gallery__item {
@@ -126,6 +142,11 @@
   .movie-name {
     text-transform: uppercase;
     color: #000000;
+  }
+
+  body.dark-theme .movie-name {
+    text-transform: uppercase;
+    color: #fff;
   }
 
   .movie-info {

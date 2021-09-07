@@ -19,7 +19,7 @@ export const renderLibHeaderOnClick = () => {
   notification.textContent = '';
 
   const markUp =
-    '<div class="header__btn-box"><button class="header__watch-btn" type="button">Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
+    '<div class="header__btn-box"><button class="header__watch-btn " type="button" >Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
   searchForm.innerHTML = markUp;
 
   libBtnEl.removeEventListener('click', renderLibHeaderOnClick);
@@ -28,7 +28,7 @@ export const renderLibHeaderOnClick = () => {
   logoEl.addEventListener('click', renderMainPageOnClick);
   homeBtnEl.addEventListener('click', renderInputOnClick);
   logoEl.addEventListener('click', renderInputOnClick);
-
+  paginationReset.innerHTML = '';
   changeBgcLibBtn();
 };
 
@@ -37,25 +37,28 @@ const changeBgcLibBtn = () => {
   const queueBtnEl = document.querySelector('.header__queue-btn');
 
   const onWatchClick = () => {
+    paginationReset.innerHTML = '';
     watchBtnEl.classList.add('header__watch-btn_active');
     queueBtnEl.classList.remove('header__queue-btn_active');
     onWatchedBtnClick(); //MK
     watchBtnEl.removeEventListener('click', onWatchClick);
     queueBtnEl.addEventListener('click', onQueueClick);
-    paginationReset.innerHTML = '';
   };
 
   const onQueueClick = () => {
+    paginationReset.innerHTML = '';
     queueBtnEl.classList.add('header__queue-btn_active');
     watchBtnEl.classList.remove('header__watch-btn_active');
     onQueueBtnClick(); //MK
     watchBtnEl.addEventListener('click', onWatchClick);
     queueBtnEl.removeEventListener('click', onQueueClick);
-    paginationReset.innerHTML = '';
+
+    watchBtnEl.classList.remove('activeBtn');
   };
 
   watchBtnEl.addEventListener('click', onWatchClick);
   queueBtnEl.addEventListener('click', onQueueClick);
+  libBtnEl.addEventListener('click', watchBtnEl.classList.add('activeBtn'));
 };
 
 libBtnEl.addEventListener('click', renderLibHeaderOnClick);

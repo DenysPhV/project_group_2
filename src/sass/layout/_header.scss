@@ -23,6 +23,21 @@
       background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/header-desktop-1024x230@1x.jpg);
     }
+
+    &.dark-theme {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../images/header-mobil-320x230@1x.jpg);
+
+      @media screen and (min-width: 768px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-tablet-768x230@1x.jpg);
+      }
+
+      @media screen and (min-width: 1024px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-desktop-1024x230@1x.jpg);
+      }
+    }
   }
 
   &__lib-bg-js {
@@ -38,6 +53,21 @@
       background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/header-libr-desktop-1024x230@1x.jpg);
     }
+
+    &.dark-theme {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../images/header-libr-mobil-320x230@1x.jpg);
+
+      @media screen and (min-width: 768px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-libr-tablet-768x230@1x.jpg);
+      }
+
+      @media screen and (min-width: 1024px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-libr-desktop-1024x230@1x.jpg);
+      }
+    }
   }
 
   @media screen and (max-width: 767px) {
@@ -45,6 +75,7 @@
   }
 
   &__box {
+    position: relative;
     display: flex;
     align-items: flex-end;
   }
@@ -132,6 +163,14 @@
   margin-left: auto;
   display: flex;
 
+  @media screen and (min-width: 768px) {
+    margin-right: 140px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-left: 70px;
+  }
+
   &__btn {
     position: relative;
     cursor: pointer;
@@ -215,6 +254,21 @@
       background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/header-desktop-1024x230@2x.jpg);
     }
+
+    &.dark-theme {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../images/header-mobil-320x230@2x.jpg);
+
+      @media screen and (min-width: 768px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-tablet-768x230@2x.jpg);
+      }
+
+      @media screen and (min-width: 1024px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-desktop-1024x230@2x.jpg);
+      }
+    }
   }
 
   .header__lib-bg-js {
@@ -230,6 +284,21 @@
       background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url(../images/header-libr-desktop-1024x230@2x.jpg);
     }
+
+    &.dark-theme {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../images/header-libr-mobil-320x230@2x.jpg);
+
+      @media screen and (min-width: 768px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-libr-tablet-768x230@2x.jpg);
+      }
+
+      @media screen and (min-width: 1024px) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url(../images/header-libr-desktop-1024x230@2x.jpg);
+      }
+    }
   }
 }
 .notification {
@@ -240,4 +309,9 @@
   line-height: 1.17;
   font-weight: 400;
   color: rgba(255, 0, 27, 1);
+}
+
+.activeBtn {
+  background-color: #ff6b01;
+  border-color: #ff6b01;
 }

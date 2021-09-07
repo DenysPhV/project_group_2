@@ -9,9 +9,16 @@ body.dark-theme {
 }
 
 .toolbar {
+  position: absolute; //AB
+  right: 0; //AB
   display: flex;
   justify-content: flex-end;
-  padding: 16px 0px;
+
+  //AB
+  @media screen and (max-width: 767px) {
+    transform: rotate(90deg) scale(0.8);
+    right: -40px;
+  }
 }
 
 /* THEME SWITCH */
@@ -24,16 +31,22 @@ body.dark-theme {
   color: #fff;
   height: 15px;
   width: 15px;
-  margin-right: 8px;
-  margin-left: 8px;
+  margin-right: 4px;
+  margin-left: 4px;
+
+  //AB
+  @media screen and (max-width: 767px) {
+    transform: rotate(-90deg);
+  }
 }
+
 .theme-switch__control {
   display: flex;
   align-items: center;
   flex-shrink: 0;
   position: relative;
   width: 50px;
-  height: 18px;
+  height: 19px; //AB
   border-radius: 50em;
   padding: 3px 0;
 }
@@ -87,7 +100,8 @@ body.dark-theme {
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(35px);
+  background-color: #333; //AB
+  transform: translateX(34px); //AB
 }
 
 .theme-switch__toggle:focus + .theme-switch__track,

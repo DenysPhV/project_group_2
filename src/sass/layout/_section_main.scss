@@ -39,6 +39,11 @@
     width: 280px;
     height: 402px;
   }
+
+  body.dark-theme .movie-name {
+    text-transform: uppercase;
+    color: #fff;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -90,6 +95,11 @@
     width: 293px;
     height: 398px;
   }
+
+  body.dark-theme .movie-name {
+    text-transform: uppercase;
+    color: #fff;
+  }
 }
 
 @media screen and (min-width: 1020px) {
@@ -109,8 +119,7 @@
   .gallery__item:hover,
   .gallery__item:focus {
     cursor: pointer;
-    box-shadow: 10px 10px 10px #f54803, 10px 10px 10px #53020248,
-      10px 10px 10px rgba(90, 8, 8, 0.16);
+    box-shadow: 10px 10px 10px #f54803;
   }
 
   .gallery__item {

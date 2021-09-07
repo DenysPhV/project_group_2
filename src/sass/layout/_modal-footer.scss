@@ -126,6 +126,10 @@
       margin-left: -15px;
     }
 
+    &__list:last-child {
+      align-self: center;
+    }
+
     &__item {
       flex-basis: calc((100% - 2 * 15px) / 2);
       margin-top: 15px;

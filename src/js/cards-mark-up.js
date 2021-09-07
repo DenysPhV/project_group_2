@@ -44,8 +44,10 @@ export function cardsMarkUp(cards) {
 // Запрос списка жанров
   apiService.fetchGenre().then(genres => {
     cards.forEach((card, i) => {
+       // сохраняем в локал сторедж 
+      localStorage.setItem("genres", JSON.stringify(genres));
+      // форматируем дату
       card.release_date = card.release_date.substring(0, 4);
-
       // Обрезаем жанры
       if (card.genre_ids.length > 3) {
         card.genre_ids = card.genre_ids.slice(0, 3);

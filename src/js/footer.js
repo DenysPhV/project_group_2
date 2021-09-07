@@ -1,17 +1,17 @@
 const arrFooterDev = [
   {
     name: 'Andrii Lypovetskyi',
-    position: 'Developer',
+    position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-4d63a7b43c4f-512',
   },
   {
     name: 'Aleksandr Bondarenko',
-    position: 'Developer',
+    position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020RDMUW20-57b717892067-512',
   },
   {
-    name: 'Dmytro S.',
-    position: 'Developer',
+    name: 'Dmytro Salii',
+    position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020ALA32Q5-442b8c87d6d3-512',
   },
   {
@@ -21,22 +21,22 @@ const arrFooterDev = [
   },
   {
     name: 'Myroslav Kuhtaruk',
-    position: 'Developer',
+    position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020L0YFVPE-b8d72596946f-512',
   },
   {
     name: 'Masha Shytykova',
-    position: 'Developer',
+    position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020SD6GU1F-5b19e948dcad-512',
   },
   {
     name: 'Oleksandr Boiko',
-    position: 'Developer',
+    position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0210K7SHR7-e237547f4c4f-512',
   },
   {
     name: 'Ruslan Kuzma',
-    position: 'Developer',
+    position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01E40QL2LD-U01KVFMHD5M-d78aac37dda3-512',
   },
   {

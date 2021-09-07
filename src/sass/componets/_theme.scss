@@ -37,6 +37,8 @@ body.dark-theme {
   //AB
   @media screen and (max-width: 767px) {
     transform: rotate(-90deg);
+    height: 15px;
+    width: 15px;
   }
 }
 

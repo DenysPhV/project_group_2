@@ -9,6 +9,8 @@
   right: 0;
   left: 0;
 
+  margin: 0 auto;
+
   display: flex;
   flex-flow: column nowrap;
 
@@ -39,19 +41,11 @@
 
     width: 50%;
     height: 100vh;
-
-    margin-top: -15px;
-    margin-left: -15px;
   }
 
   &__item {
-    // outline: 1px solid tomato;
     align-self: center;
-    padding-top: 1%;
-
-    flex-basis: calc((100% - 2 * 15px) / 2);
-    margin-top: 15px;
-    margin-left: 15px;
+    padding-top: 2.5%;
 
     margin-bottom: 10px;
 
@@ -81,11 +75,94 @@
   }
 
   // кнопка закрытия
-  &__btn {
-    position: fixed;
+  // &__btn {
+  //   display: none;
+  // }
 
-    top: 10%;
-    left: 10%;
+  // link social icon
+  &__list-link {
+    position: absolute;
+  }
+
+  &__item-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__icon-link {
+    outline: 1px solid tomato;
+
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    display: block;
+    outline: 1px solid rgb(108, 255, 71);
+  }
+
+  @media screen and (max-width: 767px) {
+    min-width: 320px;
+  }
+
+  // Контейнер для tablet
+  @media screen and (min-width: 768px) {
+    width: 658px;
+
+    &__window {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    &__list {
+      width: 95%;
+      margin-top: -15px;
+      margin-left: -15px;
+    }
+
+    &__item {
+      flex-basis: calc((100% - 2 * 15px) / 2);
+      margin-top: 15px;
+      margin-left: 15px;
+
+      padding-top: 1%;
+    }
+
+    &__images {
+      // border: 1px solid;
+      border-radius: 5px;
+
+      margin: auto;
+    }
+
+    &__btn {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  // Контейнер для desktop
+  @media screen and (min-width: 1024px) {
+    width: 922px;
+
+    &__list {
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+
+    &__item {
+      flex-basis: calc((100% - 3 * 30px) / 3);
+      margin-top: 30px;
+      margin-left: 30px;
+    }
   }
 }
 

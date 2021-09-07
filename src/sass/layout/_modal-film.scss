@@ -216,3 +216,16 @@ body.modal-open {
     border: 1px solid rgb(170, 168, 168);
   }
 }
+
+body.dark-theme .modal__container {
+  background-color: #333;
+}
+
+body.dark-theme .film__title,
+.about__text {
+  color: #fff;
+}
+
+body.dark-theme .about__title {
+  color: #ff6b08;
+}

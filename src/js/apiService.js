@@ -41,8 +41,6 @@ export default class ApiService {
     return fetch(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
       .then(r => r.json())
       .then(data => {
-                    // сохраняем в локал сторедж 
-        localStorage.setItem("genres", JSON.stringify(data.genres));
         return data.genres;
       })
       .catch(error => console.log(error));

@@ -102,6 +102,7 @@ body.modal-open {
   font-size: 20px;
   line-height: 1.15;
   margin-bottom: 20px;
+
   @media screen and (min-width: 1024px) {
     font-size: 30px;
     line-height: 1.17;
@@ -144,6 +145,7 @@ body.modal-open {
 .about__text {
   line-height: 1.67;
   margin-bottom: 21px;
+  color: #000000;
 }
 
 // Кнопки
@@ -221,11 +223,14 @@ body.dark-theme .modal__container {
   background-color: #333;
 }
 
-body.dark-theme .film__title,
-.about__text {
+body.dark-theme .about__text {
   color: #fff;
 }
 
 body.dark-theme .about__title {
   color: #ff6b08;
+}
+
+body.dark-theme .film__title {
+  color: #fff;
 }

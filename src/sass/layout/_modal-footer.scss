@@ -1,4 +1,8 @@
 //hystmodal
+body.footer-modal {
+  overflow: hidden;
+}
+
 .footer-modal {
   position: fixed;
   top: 0;
@@ -48,6 +52,7 @@
   }
 
   &__item {
+    position: relative;
     align-self: center;
     padding-top: 2.5%;
 
@@ -77,11 +82,25 @@
     padding-bottom: 20px;
   }
 
+  &__list-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+  }
+
   // close button
   &__btn {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 15px;
 
     width: 30px;
     height: 30px;
@@ -105,43 +124,13 @@
     outline: none;
   }
 
-  // link social icon
-  // &__list-link {
-  //   position: absolute;
-  // }
-
-  // &__item-link {
-  //   display: flex;
-  //   justify-content: center;
-  // }
-
-  &__icon-link {
-    // outline: 1px solid tomato;
-
-    // position: relative;
-    // top: 0;
-    // left: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__icon {
-    width: 32px;
-    height: 32px;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-
-    outline: 1px solid rgb(108, 255, 71);
-  }
-
   @media screen and (max-width: 767px) {
     min-width: 320px;
+
+    &__list-link {
+      top: 5px;
+      right: 5px;
+    }
   }
 
   // Контейнер для tablet
@@ -185,7 +174,7 @@
       margin-top: 30px;
       margin-left: 30px;
       border-radius: 9px;
-      padding-top: 6px;
+      padding-top: 10px;
     }
   }
 }
@@ -194,4 +183,13 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+ion-icon {
+  color: #000000;
+}
+
+ion-icon:hover,
+ion-icon:focus {
+  color: #ff6b08;
 }

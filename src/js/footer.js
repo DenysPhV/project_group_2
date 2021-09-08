@@ -2,7 +2,7 @@ const arrFooterDev = [
   {
     name: 'Andrii Lypovetskyi',
     position: 'Full-Stack developer',
-    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-4d63a7b43c4f-512',
+    preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-e6f9cf6dd225-512',
     linkedin: '',
     linkedinIcon: './images/sprite.svg#linkedin',
     github: '',

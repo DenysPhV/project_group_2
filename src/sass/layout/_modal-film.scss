@@ -55,7 +55,7 @@ body.modal-open {
     display: flex;
     margin: auto;
     width: 618px;
-    height: 562px;
+    min-height: 457px;
     padding: 42px 30px 40px 28px;
   }
 
@@ -80,6 +80,7 @@ body.modal-open {
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     max-width: 264px;
     height: 374px;
+    margin-bottom: 0px;
   }
 
   @media screen and (min-width: 1024px) {

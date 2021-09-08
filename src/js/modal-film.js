@@ -19,11 +19,12 @@ function onClick(event) {
   // console.log(filmId);
 
   // Запрос по id на сервер
-  apiService.fetchMovieDetails(filmId).then(card => {
+  apiService.fetchMovieDetails(filmId).then((card) => {
     console.log(card);
     // Проверяет количество жаров
     if (card.genres.length > 3) {
       card.genres = card.genres.slice(0, 3);
+      card.genres.push({ id: 0, name: 'and other' });
     }
     // Проверяет пришол ли постер фильма
     card.poster_path != null

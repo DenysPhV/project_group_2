@@ -5,9 +5,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-e6f9cf6dd225-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
   {
     name: 'Ruslan Kuzma',
@@ -15,9 +14,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01E40QL2LD-U01KVFMHD5M-d78aac37dda3-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
   {
     name: 'Aleksandr Bondarenko',
@@ -25,9 +23,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020RDMUW20-57b717892067-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
   {
     name: 'Dmytro Salii',
@@ -35,9 +32,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020ALA32Q5-442b8c87d6d3-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
 
   {
@@ -46,9 +42,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020L0YFVPE-b8d72596946f-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
   {
     name: 'Masha Shytykova',
@@ -56,9 +51,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020SD6GU1F-5b19e948dcad-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
   {
     name: 'Oleksandr Boiko',
@@ -66,9 +60,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0210K7SHR7-e237547f4c4f-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
 
   {
@@ -77,9 +70,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020KTB155J-6d17af4c8085-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
   {
     name: 'Denys Filichkin',
@@ -87,9 +79,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020BQ51HE1-5e9ad54fc99b-512',
     linkedin: '',
     github: '',
-    linkedinIcon:
-      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon: 'bootstrap-icons.svg#linkedin',
+    githubIcon: 'bootstrap-icons.svg#github',
   },
 ];
 
@@ -111,15 +102,15 @@ arrFooterDev.map(
       <ul class="footer-modal__list-link list">
         <li class="footer-modal__item-link">
       <a href="${github}" class="footer-modal__icon-link">
-         <svg class="footer-modal__icon">
-         <use href="${githubIcon}"></use>
+         <svg class="footer-modal__icon" width="32" height="32">
+         <use xlink:href="${githubIcon}"></use>
          </svg>
       </a>
       </li>
      <li class="footer-modal__item-link">
       <a href="${linkedin}" class="footer-modal__icon-link">
-       <svg class="footer-modal__icon">
-         <use href="${linkedinIcon}"></use>
+       <svg class="footer-modal__icon" width="32" height="32">
+         <use xlink:href="${linkedinIcon}"></use>
          </svg>
       </a>
       </li></ul>

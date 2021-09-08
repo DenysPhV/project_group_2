@@ -23,8 +23,8 @@
     overflow: hidden;
     overflow-y: auto;
 
-    width: 100vw;
-    height: 100vh;
+    // width: 100vw;
+    // height: 100vh;
 
     background-color: rgba(129, 18, 18, 0.774);
     padding-top: 20px;
@@ -72,6 +72,7 @@
     padding-bottom: 20px;
   }
 
+  // close button
   &__btn {
     position: absolute;
     top: 10px;
@@ -125,9 +126,11 @@
     // position: absolute;
     // top: 0;
     // left: 0;
-    // display: flex;
+    display: flex;
     // justify-content: center;
     // align-items: center;
+
+    fill: #ff6b08;
 
     outline: 1px solid rgb(108, 255, 71);
   }

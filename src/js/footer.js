@@ -4,36 +4,36 @@ const arrFooterDev = [
     position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-e6f9cf6dd225-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
   {
     name: 'Ruslan Kuzma',
     position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01E40QL2LD-U01KVFMHD5M-d78aac37dda3-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
   {
     name: 'Aleksandr Bondarenko',
     position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020RDMUW20-57b717892067-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
   {
     name: 'Dmytro Salii',
     position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020ALA32Q5-442b8c87d6d3-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
 
   {
@@ -41,27 +41,27 @@ const arrFooterDev = [
     position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020L0YFVPE-b8d72596946f-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
   {
     name: 'Masha Shytykova',
     position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020SD6GU1F-5b19e948dcad-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
   {
     name: 'Oleksandr Boiko',
     position: 'Full-Stack developer',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0210K7SHR7-e237547f4c4f-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
 
   {
@@ -69,20 +69,24 @@ const arrFooterDev = [
     position: 'Scrum master',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020KTB155J-6d17af4c8085-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
   {
     name: 'Denys Filichkin',
     position: 'Team lead',
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020BQ51HE1-5e9ad54fc99b-512',
     linkedin: '',
-    linkedinIcon: './images/sprite.svg#linkedin',
     github: '',
-    githubIcon: './images/sprite.svg#github',
+    linkedinIcon: './images/icon/linkedin.svg',
+    githubIcon: './images/icon/github.svg',
   },
 ];
+
+//  <svg class="footer-modal__icon" width="32" height="32"><use href="./images/sprite.svg#linkedin"></use></svg>
+
+//  <svg class="footer-modal__icon" width="32" height="32"><use href="./images/sprite.svg#github"></use></svg>
 
 const itemFooterDev = document.querySelector('.footer-modal__list');
 arrFooterDev.map(
@@ -98,18 +102,16 @@ arrFooterDev.map(
       <ul class="footer-modal__list-link">
         <li class="footer-modal__item-link">
       <a href="${github}" class="footer-modal__icon-link">
-          <svg class="footer-modal__icon" width="32"
-    height="32">
-           <use href="${githubIcon}"></use>
+         <svg class="footer-modal__icon" width="32" height="32">
+         <use href="${githubIcon}"></use>
          </svg>
       </a>
       </li>
      <li class="footer-modal__item-link">
       <a href="${linkedin}" class="footer-modal__icon-link">
-        <svg class="footer-modal__icon" width="32"
-    height="32">
-          <use href="${linkedinIcon}"></use>
-        </svg>
+       <svg class="footer-modal__icon" width="32" height="32">
+         <use href="${linkedinIcon}"></use>
+         </svg>
       </a>
       </li></ul>
      </div>

@@ -2,6 +2,7 @@ import './sass/main.scss';
 import './js/pagination';
 import './js/searchFilm';
 import './js/footer';
+import './js/arrow-top';
 
 import './js/renderBtnLibr';
 

@@ -1,8 +1,11 @@
 //hystmodal
 .footer-modal {
+  display: flex;
+
   color: #545454;
   font-size: 16px;
   line-height: 1.18;
+
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10,14 +13,7 @@
   left: 0;
 
   margin: 0 auto;
-
-  display: flex;
-  flex-flow: column nowrap;
-
-  justify-content: flex-start;
-  align-items: center;
   z-index: 99;
-
   background-color: rgba(0, 0, 0, 0.7);
 
   &__window {
@@ -26,6 +22,9 @@
     justify-content: center;
     overflow: hidden;
     overflow-y: auto;
+
+    width: 100vw;
+    height: 100vh;
 
     background-color: rgba(129, 18, 18, 0.774);
     padding-top: 20px;
@@ -60,7 +59,6 @@
   }
 
   &__images {
-    // border: 1px solid;
     border-radius: 5px;
     max-width: 95%;
 
@@ -74,27 +72,49 @@
     padding-bottom: 20px;
   }
 
-  // кнопка закрытия
-  // &__btn {
-  //   display: none;
-  // }
+  &__btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/close.svg);
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgb(233, 230, 230);
+    color: #ffffff;
+    &:hover,
+    &:focus {
+      background-color: #ff6b08;
+    }
+
+    transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+
+    cursor: pointer;
+    outline: none;
+  }
 
   // link social icon
-  &__list-link {
-    position: absolute;
-  }
+  // &__list-link {
+  //   position: absolute;
+  // }
 
-  &__item-link {
-    display: flex;
-    justify-content: center;
-  }
+  // &__item-link {
+  //   display: flex;
+  //   justify-content: center;
+  // }
 
   &__icon-link {
     outline: 1px solid tomato;
 
-    position: relative;
-    top: 0;
-    left: 0;
+    // position: relative;
+    // top: 0;
+    // left: 0;
 
     display: flex;
     justify-content: center;
@@ -102,7 +122,13 @@
   }
 
   &__icon {
-    display: block;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
     outline: 1px solid rgb(108, 255, 71);
   }
 
@@ -114,14 +140,8 @@
   @media screen and (min-width: 768px) {
     width: 658px;
 
-    &__window {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-    }
-
     &__list {
-      width: 95%;
+      width: 85%;
       margin-top: -15px;
       margin-left: -15px;
     }
@@ -135,7 +155,8 @@
       margin-top: 15px;
       margin-left: 15px;
 
-      padding-top: 1%;
+      padding-top: 7px;
+      border-radius: 8px;
     }
 
     &__images {
@@ -143,13 +164,6 @@
       border-radius: 5px;
 
       margin: auto;
-    }
-
-    &__btn {
-      position: absolute;
-
-      bottom: 0;
-      left: 0;
     }
   }
 
@@ -166,6 +180,8 @@
       flex-basis: calc((100% - 3 * 30px) / 3);
       margin-top: 30px;
       margin-left: 30px;
+      border-radius: 9px;
+      padding-top: 6px;
     }
   }
 }

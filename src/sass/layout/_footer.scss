@@ -1,3 +1,4 @@
+// стили только для футера
 .footer__page {
   //   outline: 1px solid tomato;
   color: #545454;
@@ -40,6 +41,7 @@
   }
 }
 
+// для свича тем
 body.dark-theme .footer__page {
   color: #fff;
 }

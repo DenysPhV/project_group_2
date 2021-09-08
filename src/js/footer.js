@@ -70,7 +70,8 @@ arrFooterDev.map(({ name, position, preview, linkedin, github }, index) => {
     'afterbegin',
     `<li class="footer-modal__item">
     
-    <img class="footer-modal__images" src="${preview}" alt="${name}" >
+    <img class="footer-modal__images" src="${preview}" alt="${name}" width="512px"
+    height="512px">
     <div class="footer-modal__desc">
      <h3>${name}</h3>
      <p>${position}</p>

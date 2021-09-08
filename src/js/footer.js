@@ -5,8 +5,9 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0209L32VGE-e6f9cf6dd225-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
+    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
   },
   {
     name: 'Ruslan Kuzma',
@@ -14,8 +15,9 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01E40QL2LD-U01KVFMHD5M-d78aac37dda3-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
+    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
   },
   {
     name: 'Aleksandr Bondarenko',
@@ -23,8 +25,9 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020RDMUW20-57b717892067-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
+    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
   },
   {
     name: 'Dmytro Salii',
@@ -32,8 +35,9 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020ALA32Q5-442b8c87d6d3-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
+    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
   },
 
   {
@@ -42,8 +46,9 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020L0YFVPE-b8d72596946f-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
+    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
   },
   {
     name: 'Masha Shytykova',
@@ -51,8 +56,9 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020SD6GU1F-5b19e948dcad-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
+    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
   },
   {
     name: 'Oleksandr Boiko',
@@ -60,8 +66,9 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U0210K7SHR7-e237547f4c4f-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
-    githubIcon: './images/icon/github.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
+    githubIcon: 'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/github.svg',
   },
 
   {
@@ -70,7 +77,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020KTB155J-6d17af4c8085-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
     githubIcon: './images/icon/github.svg',
   },
   {
@@ -79,7 +87,8 @@ const arrFooterDev = [
     preview: 'https://ca.slack-edge.com/T01UW5D5RDJ-U020BQ51HE1-5e9ad54fc99b-512',
     linkedin: '',
     github: '',
-    linkedinIcon: './images/icon/linkedin.svg',
+    linkedinIcon:
+      'https://github.com/DenysPhV/project_group_2/blob/main/src/images/icon/linkedin.svg',
     githubIcon: './images/icon/github.svg',
   },
 ];

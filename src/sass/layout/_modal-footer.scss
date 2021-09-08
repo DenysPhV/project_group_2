@@ -1,16 +1,20 @@
 //hystmodal
 .footer-modal {
-  display: flex;
-
-  color: #545454;
-  font-size: 16px;
-  line-height: 1.18;
-
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+
+  // width: 100vw;
+  // height: 100vh;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 
   margin: 0 auto;
   z-index: 99;
@@ -23,8 +27,9 @@
     overflow: hidden;
     overflow-y: auto;
 
-    // width: 100vw;
-    // height: 100vh;
+    color: #545454;
+    font-size: 16px;
+    line-height: 1.18;
 
     background-color: rgba(129, 18, 18, 0.774);
     padding-top: 20px;
@@ -111,7 +116,7 @@
   // }
 
   &__icon-link {
-    outline: 1px solid tomato;
+    // outline: 1px solid tomato;
 
     // position: relative;
     // top: 0;
@@ -123,14 +128,14 @@
   }
 
   &__icon {
+    width: 32px;
+    height: 32px;
     // position: absolute;
     // top: 0;
     // left: 0;
-    display: flex;
+    // display: flex;
     // justify-content: center;
     // align-items: center;
-
-    fill: #ff6b08;
 
     outline: 1px solid rgb(108, 255, 71);
   }

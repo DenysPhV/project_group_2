@@ -99,17 +99,17 @@ arrFooterDev.map(
     <div class="footer-modal__desc">
      <h3>${name}</h3>
      <p>${position}</p>
-      <ul class="footer-modal__list-link">
+      <ul class="footer-modal__list-link list">
         <li class="footer-modal__item-link">
       <a href="${github}" class="footer-modal__icon-link">
-         <svg class="footer-modal__icon" width="32" height="32">
+         <svg class="footer-modal__icon">
          <use href="${githubIcon}"></use>
          </svg>
       </a>
       </li>
      <li class="footer-modal__item-link">
       <a href="${linkedin}" class="footer-modal__icon-link">
-       <svg class="footer-modal__icon" width="32" height="32">
+       <svg class="footer-modal__icon">
          <use href="${linkedinIcon}"></use>
          </svg>
       </a>

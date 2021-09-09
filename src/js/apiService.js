@@ -46,6 +46,20 @@ export default class ApiService {
       .catch(error => console.log(error));
   }
 
+ //это fetch для поиска видео трейлеров для фильмов
+// https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
+  
+  fetchVideo(movie_id) {
+    return fetch(`${BASE_URL}/movie/${movie_id}/videos?api_key=${API_KEY}&language=en-US`)
+      .then(r => r.json())
+      .then(data => {
+       // console.log("data_id", data);
+        return data.results;
+      })
+      .catch(error => console.log(error));
+  }
+
+
   get query() {
     return this.searchQuery;
   }

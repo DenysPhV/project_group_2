@@ -13,9 +13,9 @@ const apiService = new ApiService();
 // Опции для отрисовки пагинации с документации
 const options = {
   totalItems: 1000,
-  itemsPerPage: 10,
+  itemsPerPage: 5,
   visiblePages: 5,
-  page: 5,
+  page: 1,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',

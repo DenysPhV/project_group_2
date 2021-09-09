@@ -57,8 +57,7 @@ export const renderMainPageOnClick = (e) => {
 };
 
 export const renderInputOnClick = () => {
-  const inputMarkup = '<input class="header__input" type="text" placeholder="Search movies" />';
-  searchForm.innerHTML = inputMarkup;
+  searchForm.innerHTML = '<input class="header__input" type="text" placeholder="Search movies" />';
   homeBtnEl.removeEventListener('click', renderInputOnClick);
   logoEl.removeEventListener('click', renderInputOnClick);
 };

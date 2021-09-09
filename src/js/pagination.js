@@ -37,6 +37,8 @@ const options = {
   },
 };
 
+export { options };
+
 const pagination = new Pagination('#tui-pagination-container', options);
 
 // Запрос в фетч и рендер карточек
@@ -58,11 +60,6 @@ pagination.on('afterMove', (e) => {
     setTimeout(() => spinner.stop(), 1000);
   });
 });
-
-// Рендер карточки
-// function renderGallery(data) {
-//   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
-// }
 
 // Очистка галерии
 function clearGallery() {

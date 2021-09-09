@@ -14,7 +14,7 @@ const apiService = new ApiService();
 const options = {
   totalItems: 1000,
   itemsPerPage: 10,
-  visiblePages: 10,
+  visiblePages: 5,
   page: 5,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
@@ -40,19 +40,19 @@ const options = {
 const pagination = new Pagination('#tui-pagination-container', options);
 
 // Запрос в фетч и рендер карточек
-apiService.fetchTrending(1).then(res => {
+apiService.fetchTrending(1).then((res) => {
   pagination.reset(res.total_pages);
   cardsMarkUp(res.results);
 });
 
 // Функция пагинации
-pagination.on('afterMove', e => {
+pagination.on('afterMove', (e) => {
   spinner.spin(target);
   const currentPage = e.page;
   window.scrollTo(scrollX, 0);
 
   clearGallery();
-  apiService.fetchTrending(currentPage).then(res => {
+  apiService.fetchTrending(currentPage).then((res) => {
     cardsMarkUp(res.results);
     currentMovies.movies = res.results;
     setTimeout(() => spinner.stop(), 1000);

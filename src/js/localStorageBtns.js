@@ -3,6 +3,7 @@
 export { watchedBtnLogic, queueBtnLogic };
 import currentMovies from './currentMovies';
 import { onWatchedBtnClick, onQueueBtnClick, onEmptyContainer } from './myLibraryBtns';
+import Notiflix from 'notiflix';
 let queuedMovies = null;
 let watchedMovies = null;
 
@@ -59,6 +60,7 @@ function queueBtnLogic() {
       localStorage.setItem('Queued', JSON.stringify(queuedMovies));
       // Міняєм текст кнопки
       queuedBtn.textContent = 'Remove from queue';
+      Notiflix.Notify.success('The movie was successfully added to the library');
     } else {
       // Шукаєм фільм який потрібно видалити
       [...queuedMovies].find((movie, i) => {
@@ -71,6 +73,7 @@ function queueBtnLogic() {
       localStorage.setItem('Queued', JSON.stringify(queuedMovies));
       // Міняєм текст кнопки
       queuedBtn.textContent = 'Add to queue';
+      Notiflix.Notify.warning('You have deleted your movie from the library!');
     }
     // Перемальовуєм картки фільмів
     reMarkupCards();
@@ -130,6 +133,7 @@ function watchedBtnLogic() {
       localStorage.setItem('Watched', JSON.stringify(watchedMovies));
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Remove from watched';
+      Notiflix.Notify.success('The movie was successfully added to the library');
     } else {
       // Шукаєм фільм який потрібно видалити
       [...watchedMovies].find((movie, i) => {
@@ -142,6 +146,7 @@ function watchedBtnLogic() {
       localStorage.setItem('Watched', JSON.stringify(watchedMovies));
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Add to watched';
+      Notiflix.Notify.warning('You have deleted your movie from the library!');
     }
     // Перемальовуєм картки фільмів
     reMarkupCards();

@@ -1,5 +1,5 @@
 // Цей скрипт відповідає за добавлення переглянутих фільмів у local storage
-
+import Notiflix from 'notiflix';
 export default watchedBtnLogic;
 import currentMovies from './currentMovies';
 let watchedMovies = null;

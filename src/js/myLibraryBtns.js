@@ -3,6 +3,7 @@
 import { galleryContainer } from './refs.js';
 import cardsTemplate from '../templates/cards.hbs';
 import currentMovies from './currentMovies.js';
+import Notiflix from 'notiflix';
 
 export { onWatchedBtnClick, onQueueBtnClick, createCards };
 

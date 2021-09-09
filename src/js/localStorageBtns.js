@@ -2,7 +2,7 @@
 
 export { watchedBtnLogic, queueBtnLogic };
 import currentMovies from './currentMovies';
-import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns';
+import { onWatchedBtnClick, onQueueBtnClick, onEmptyContainer } from './myLibraryBtns';
 let queuedMovies = null;
 let watchedMovies = null;
 
@@ -156,13 +156,11 @@ function reMarkupCards() {
       watchedBtn.classList.contains('activeBtn') ||
       watchedBtn.classList.contains('header__watch-btn_active')
     ) {
-      console.log('дойшло');
       onWatchedBtnClick();
     } else if (
       queuedBtn.classList.contains('activeBtn') ||
       queuedBtn.classList.contains('header__queue-btn_active')
     ) {
-      console.log('дойшло');
       onQueueBtnClick();
     }
   }

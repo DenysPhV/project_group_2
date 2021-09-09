@@ -1,3 +1,4 @@
+// comment ??????
 import {
   homeBtnEl,
   logoEl,
@@ -11,6 +12,7 @@ import { renderMainPageOnClick, renderInputOnClick } from './homeBtnRenderPage';
 import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns.js'; //MK
 import Notiflix from 'notiflix';
 
+// comment ??????
 export const renderLibHeaderOnClick = () => {
   libBtnEl.classList.add('nav-menu__btn_active');
   homeBtnEl.classList.add('nav-menu__btn_hover');
@@ -23,6 +25,9 @@ export const renderLibHeaderOnClick = () => {
     '<div class="header__btn-box"><button class="header__watch-btn " type="button" >Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
   searchForm.innerHTML = markUp;
 
+  // searchForm.innerHTML =
+  //   '<div class="header__btn-box"><button class="header__watch-btn " type="button" >Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
+
   libBtnEl.removeEventListener('click', renderLibHeaderOnClick);
 
   homeBtnEl.addEventListener('click', renderMainPageOnClick);
@@ -33,6 +38,7 @@ export const renderLibHeaderOnClick = () => {
   changeBgcLibBtn();
 };
 
+// comment ??????
 const changeBgcLibBtn = () => {
   const watchBtnEl = document.querySelector('.header__watch-btn');
   const queueBtnEl = document.querySelector('.header__queue-btn');

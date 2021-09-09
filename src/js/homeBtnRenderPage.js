@@ -12,7 +12,7 @@ import { target, spinner } from './spinner.js';
 const pagination = new Pagination('#tui-pagination-container', options);
 const apiService = new ApiService();
 
-export const renderMainPageOnClick = e => {
+export const renderMainPageOnClick = (e) => {
   galleryContainer.innerHTML = '';
   // document.querySelector('.pagination-thumb').innerHTML = '';
   spinner.spin(target);
@@ -23,10 +23,10 @@ export const renderMainPageOnClick = e => {
   searchForm.classList.add('input-wrap_searchIcon');
 
   libBtnEl.classList.add('nav-menu__btn_hover');
-
+  // comment ??????
   apiService
     .fetchTrending(1)
-    .then(data => {
+    .then((data) => {
       currentMovies.movies = data.results; //MK
       pagination.reset(data.total_pages);
       return data.results;
@@ -39,13 +39,13 @@ export const renderMainPageOnClick = e => {
   // document.querySelector('.pagination-thumb').innerHTML =
   //   '<div id="tui-pagination-container" class="tui-pagination"></div>';
 
-  pagination.on('afterMove', e => {
+  pagination.on('afterMove', (e) => {
     spinner.spin(target);
     console.log(e);
     const currentPage = e.page;
     window.scrollTo(scrollX, 0);
     galleryContainer.innerHTML = '';
-    apiService.fetchTrending(currentPage).then(data => {
+    apiService.fetchTrending(currentPage).then((data) => {
       cardsMarkUp(data.results);
       currentMovies.movies = data.results;
       setTimeout(() => spinner.stop(), 1000);

@@ -18,10 +18,8 @@ export const renderLibHeaderOnClick = () => {
   headerEl.classList.replace('header__main-bg-js', 'header__lib-bg-js');
   searchForm.classList.remove('input-wrap_searchIcon');
   notification.textContent = '';
-
-  const markUp =
+  searchForm.innerHTML =
     '<div class="header__btn-box"><button class="header__watch-btn " type="button" >Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
-  searchForm.innerHTML = markUp;
 
   libBtnEl.removeEventListener('click', renderLibHeaderOnClick);
 

@@ -12,7 +12,7 @@ import { target, spinner } from './spinner.js';
 const pagination = new Pagination('#tui-pagination-container', options);
 const apiService = new ApiService();
 
-export const renderMainPageOnClick = e => {
+export const renderMainPageOnClick = (e) => {
   galleryContainer.innerHTML = '';
   // document.querySelector('.pagination-thumb').innerHTML = '';
   spinner.spin(target);
@@ -26,7 +26,7 @@ export const renderMainPageOnClick = e => {
 
   apiService
     .fetchTrending(1)
-    .then(data => {
+    .then((data) => {
       currentMovies.movies = data.results; //MK
       pagination.reset(data.total_pages);
       return data.results;
@@ -39,13 +39,13 @@ export const renderMainPageOnClick = e => {
   // document.querySelector('.pagination-thumb').innerHTML =
   //   '<div id="tui-pagination-container" class="tui-pagination"></div>';
 
-  pagination.on('afterMove', e => {
+  pagination.on('afterMove', (e) => {
     spinner.spin(target);
     console.log(e);
     const currentPage = e.page;
     window.scrollTo(scrollX, 0);
     galleryContainer.innerHTML = '';
-    apiService.fetchTrending(currentPage).then(data => {
+    apiService.fetchTrending(currentPage).then((data) => {
       cardsMarkUp(data.results);
       currentMovies.movies = data.results;
       setTimeout(() => spinner.stop(), 1000);
@@ -57,8 +57,7 @@ export const renderMainPageOnClick = e => {
 };
 
 export const renderInputOnClick = () => {
-  const inputMarkup = '<input class="header__input" type="text" placeholder="Search movies" />';
-  searchForm.innerHTML = inputMarkup;
+  searchForm.innerHTML = '<input class="header__input" type="text" placeholder="Search movies" />';
   homeBtnEl.removeEventListener('click', renderInputOnClick);
   logoEl.removeEventListener('click', renderInputOnClick);
 };

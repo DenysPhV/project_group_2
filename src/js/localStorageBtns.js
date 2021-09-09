@@ -2,7 +2,7 @@
 
 export { watchedBtnLogic, queueBtnLogic };
 import currentMovies from './currentMovies';
-import { onWatchedBtnClick, onQueueBtnClick, onEmptyContainer } from './myLibraryBtns';
+import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns';
 import Notiflix from 'notiflix';
 let queuedMovies = null;
 let watchedMovies = null;
@@ -17,9 +17,11 @@ function queueBtnLogic() {
   } else {
     queuedMovies = [];
   }
-
-  // Ставим на кнопку listener
-  queuedBtn.addEventListener('click', onQueuedClick);
+  if (localStorage.getItem('Watched')) {
+    watchedMovies = JSON.parse(localStorage.getItem('Watched'));
+  } else {
+    watchedMovies = [];
+  }
 
   // Записуєм карточки фільмів які є на сторінці в констату
   let movies = currentMovies.movies;
@@ -27,26 +29,24 @@ function queueBtnLogic() {
   //Отримуєм ID фільма який відкритий
   const movieID = queuedBtn.dataset.id;
 
+  // Ставим на кнопку listener
+  queuedBtn.addEventListener('click', onQueuedClick);
+
   // Міняєм текст кнопки якщо вона вже була додана
-  if (
-    queuedMovies.find((movie) => {
-      if (movie.id === Number(movieID)) {
-        return movie;
-      }
-    })
-  ) {
+  if (findMovie(queuedMovies, movieID)) {
     queuedBtn.textContent = 'Remove from queue';
+  }
+
+  // Перевіряє чи фільм вже є у переглянутих, якщо так то блокує кнопку
+  if (findMovie(watchedMovies, movieID)) {
+    queuedBtn.disabled = true;
+  } else {
+    queuedBtn.disabled = false;
   }
 
   function onQueuedClick() {
     //Перевіряєм чи цей фільм вже був доданий раніше, якщо так тоді виходим з функції
-    if (
-      !queuedMovies.find((movie) => {
-        if (movie.id === Number(movieID)) {
-          return movie;
-        }
-      })
-    ) {
+    if (!findMovie(queuedMovies, movieID)) {
       // Додаєм фільм до константи в якій фільми які ми витянули з local storage
       queuedMovies.push(
         movies.find((movie) => {
@@ -84,6 +84,7 @@ function queueBtnLogic() {
 
 function watchedBtnLogic() {
   const watchedBtn = document.querySelector('.film__btnWatched');
+  const queuedBtn = document.querySelector('.film__btnQueue');
   // Витягує з local storage JSON фільмів які вже були додані, перетворює в масив обєктві, і створює перемінну в якій вони будть зберігатись
   if (localStorage.getItem('Watched')) {
     watchedMovies = JSON.parse(localStorage.getItem('Watched'));
@@ -91,35 +92,23 @@ function watchedBtnLogic() {
     watchedMovies = [];
   }
 
-  // Ставим на кнопку listener
-  watchedBtn.addEventListener('click', onWatchedClick);
-
   // Записуєм карточки фільмів які є на сторінці в констату
   const movies = currentMovies.movies;
 
   //Отримуєм ID фільма який відкритий
   const movieID = watchedBtn.dataset.id;
 
+  // Ставим на кнопку listener
+  watchedBtn.addEventListener('click', onWatchedClick);
+
   // Міняєм текст кнопки якщо вона вже була додана
-  if (
-    watchedMovies.find((movie) => {
-      if (movie.id === Number(movieID)) {
-        return movie;
-      }
-    })
-  ) {
+  if (findMovie(watchedMovies, movieID)) {
     watchedBtn.textContent = 'Remove from watched';
   }
 
   function onWatchedClick() {
     //Перевіряєм чи цей фільм вже був доданий раніше, якщо так тоді виходим з функції
-    if (
-      !watchedMovies.find((movie) => {
-        if (movie.id === Number(movieID)) {
-          return movie;
-        }
-      })
-    ) {
+    if (!findMovie(watchedMovies, movieID)) {
       // Додаєм фільм до константи в якій фільми які ми витянули з local storage
       watchedMovies.push(
         movies.find((movie) => {
@@ -131,9 +120,21 @@ function watchedBtnLogic() {
 
       // Переписуєм local storage
       localStorage.setItem('Watched', JSON.stringify(watchedMovies));
+
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Remove from watched';
       Notiflix.Notify.success('The movie was successfully added to the library');
+
+      // Блокуєм кнопку черги
+      queuedBtn.disabled = true;
+      // Перевіряєм чи фільм був у черзі
+      [...queuedMovies].find((movie, i) => {
+        // Якщо знайшли то видаляєм
+        if (movie.id === Number(movieID)) {
+          queuedMovies.splice(i, 1);
+        }
+      });
+      queuedBtn.textContent = 'Add to queue';
     } else {
       // Шукаєм фільм який потрібно видалити
       [...watchedMovies].find((movie, i) => {
@@ -147,6 +148,8 @@ function watchedBtnLogic() {
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Add to watched';
       Notiflix.Notify.warning('You have deleted your movie from the library!');
+
+      queuedBtn.disabled = false;
     }
     // Перемальовуєм картки фільмів
     reMarkupCards();
@@ -169,4 +172,12 @@ function reMarkupCards() {
       onQueueBtnClick();
     }
   }
+}
+
+function findMovie(allMovies, movieToFindID) {
+  return allMovies.find((movie) => {
+    if (movie.id === Number(movieToFindID)) {
+      return movie;
+    }
+  });
 }

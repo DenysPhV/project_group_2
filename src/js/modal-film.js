@@ -1,8 +1,7 @@
 import { galleryContainer, modalContainer, body } from './refs.js';
 import modalFilmTemplate from '../templates/modal-film.hbs';
 import ApiService from './apiService';
-import watchedBtnLogic from './watchedBtn.js';
-import queueBtnLogic from './queueBtn';
+import { watchedBtnLogic, queueBtnLogic } from './localStorageBtns';
 
 const apiService = new ApiService();
 

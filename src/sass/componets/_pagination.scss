@@ -19,17 +19,6 @@
   margin-top: 40px;
   margin-right: auto;
   margin-left: auto;
-
-  @media screen and (max-width: 768px) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
 }
 
 .tui-pagination {
@@ -46,7 +35,7 @@
 
 .tui-pagination .tui-page-btn {
   height: 30px;
-  width: 30px !important;
+  width: 35px;
   padding: 13px 13px 11px;
   margin-left: 0;
   font-weight: 500;
@@ -56,15 +45,6 @@
   margin: 2px;
   background-color: #f7f7f7;
   color: #333;
-
-  @media screen and (min-width: 280px) {
-    max-width: 30px;
-    height: 30px;
-  }
-  // @media screen and (max-width: 768px) {
-  //   max-width: 35px;
-  //   height: 30px;
-  // }
 }
 
 .tui-pagination .tui-page-btn:hover,
@@ -117,8 +97,9 @@
 .tui-page-btn {
   background-color: #ff6b08;
 
-  width: 35px !important;
-  height: 30px;
+  @media screen and(max-width:767px) {
+    min-width: 25px !important;
+  }
 }
 .tui-is-selected {
   background-color: #ff6b08 !important;

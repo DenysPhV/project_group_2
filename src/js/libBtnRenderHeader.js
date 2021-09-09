@@ -9,6 +9,7 @@ import {
 } from './refs.js';
 import { renderMainPageOnClick, renderInputOnClick } from './homeBtnRenderPage';
 import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns.js'; //MK
+import Notiflix from 'notiflix';
 
 export const renderLibHeaderOnClick = () => {
   libBtnEl.classList.add('nav-menu__btn_active');
@@ -40,7 +41,9 @@ const changeBgcLibBtn = () => {
     paginationReset.innerHTML = '';
     watchBtnEl.classList.add('header__watch-btn_active');
     queueBtnEl.classList.remove('header__queue-btn_active');
+
     onWatchedBtnClick(); //MK
+
     watchBtnEl.removeEventListener('click', onWatchClick);
     queueBtnEl.addEventListener('click', onQueueClick);
   };

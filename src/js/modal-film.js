@@ -3,6 +3,7 @@ import modalFilmTemplate from '../templates/modal-film.hbs';
 import ApiService from './apiService';
 import { watchedBtnLogic, queueBtnLogic } from './localStorageBtns';
 import videoTemplate from '../templates/video.hbs'
+import currentMovies from './currentMovies.js';
 
 
 
@@ -65,12 +66,11 @@ function modalOpenClick() {
   // Ставим слушатель нажатых клавиш
   window.addEventListener('keydown', pressKey);
 
-  const watchMovieBtn = document.querySelector('.film__btnQueue');
-  watchMovieBtn.addEventListener('click', playMovieMarkUp);
+
 
   watchedBtnLogic();
   queueBtnLogic();
-  //playMovieMarkUp();
+  playMovieMarkUp();
 }
 
 // Функция закрытия модалки
@@ -107,28 +107,48 @@ function pressKey(event) {
   }
 }
 
- apiService.fetchVideo(593910).then((card) => {
+//  apiService.fetchVideo(593910).then((card) => {
 
-    console.log("key", card[0].key);
-//     // Проверяет количество жаров
+//  //   console.log("key", card[0].key);
+// //     // Проверяет количество жаров
     
-     })
+//      })
 
 
   //  watchVideoBtn.addEventListener('click', playMovieMarkUp);
 
 
 
+// const movieID = queuedBtn.dataset.id;
+// console.log("movieID", movieID)
 
 
 function playMovieMarkUp(event) {
+   const watchMovieBtn = document.querySelector('.film__button');
+  watchMovieBtn.addEventListener('click', playMovieMarkUp);
+
+  const movieId = watchMovieBtn.dataset.id
+//  const movieId = event.target.dataset.id;
+  console.log("movieId", movieId);
+  apiService.fetchVideo(movieId).then((card) => {
+    const key = card[0].key;
+    console.log("key", key);
  
-  console.log("watchMovieBtn", watchMovieBtn);
-  console.log("hello");
-   const movieId = event.target.dataset.id;
-    apiService.fetchVideo(movieId).then((card) => {
-     return key = card[0].key;
-      videoTemplate(key);
+    return key
+ 
    
-   })
- }
+  }).then(
+    key => {
+      const modalContainer = document.querySelector('.modal__container');
+      console.log("key", key);
+      modalContainer.insertAdjacentHTML('beforeend', videoTemplate(key));
+        console.log(videoTemplate(key))
+    }
+  
+  )
+ 
+}
+ 
+
+
+

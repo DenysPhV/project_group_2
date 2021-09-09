@@ -134,6 +134,7 @@ function watchedBtnLogic() {
           queuedMovies.splice(i, 1);
         }
       });
+      localStorage.setItem('Queued', JSON.stringify(queuedMovies));
       queuedBtn.textContent = 'Add to queue';
     } else {
       // Шукаєм фільм який потрібно видалити

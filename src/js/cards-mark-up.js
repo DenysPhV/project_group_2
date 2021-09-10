@@ -46,7 +46,7 @@ function changeCards(cards) {
       // Обрезаем жанры
       if (card.genre_ids.length > 3) {
         card.genre_ids = card.genre_ids.slice(0, 3);
-        card.genre_ids.push(' other');
+        card.genre_ids.push(' Other');
       }
       // Подменяем названия в genre_ids
 

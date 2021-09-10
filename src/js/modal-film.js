@@ -23,7 +23,7 @@ function onClick(event) {
     // Проверяет количество жаров
     if (card.genres.length > 3) {
       card.genres = card.genres.slice(0, 3);
-      card.genres.push({ id: 0, name: 'and other' });
+      card.genres.push({ id: 0, name: ' Other' });
     }
     // Проверяет пришол ли постер фильма
     card.poster_path != null

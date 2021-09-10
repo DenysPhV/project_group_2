@@ -10,3 +10,7 @@ export const notification = document.querySelector('.notification');
 export const modalContainer = document.querySelector('.modal');
 export const body = document.querySelector('body');
 export const paginationReset = document.querySelector('#tui-pagination-container');
+
+export const userName = document.querySelector('.user__name');
+export const authInGoogle = document.getElementById('sign_in');
+export const authOutGoogle = document.getElementById('sign_out');

@@ -107,42 +107,24 @@ function pressKey(event) {
   }
 }
 
-//  apiService.fetchVideo(593910).then((card) => {
 
-//  //   console.log("key", card[0].key);
-// //     // Проверяет количество жаров
-    
-//      })
-
-
-  //  watchVideoBtn.addEventListener('click', playMovieMarkUp);
-
-
-
-// const movieID = queuedBtn.dataset.id;
-// console.log("movieID", movieID)
 
 
 function playMovieMarkUp(event) {
-   const watchMovieBtn = document.querySelector('.film__button');
-  watchMovieBtn.addEventListener('click', playMovieMarkUp);
+   const watchMovie = document.querySelector('.film__btnQueue');
+  watchMovie.addEventListener('click', playMovieMarkUp);
 
-  const movieId = watchMovieBtn.dataset.id
-//  const movieId = event.target.dataset.id;
-  console.log("movieId", movieId);
+  const movieId = watchMovie.dataset.id
   apiService.fetchVideo(movieId).then((card) => {
     const key = card[0].key;
-    console.log("key", key);
+
  
     return key
- 
-   
   }).then(
     key => {
       const modalContainer = document.querySelector('.modal__container');
-      console.log("key", key);
       modalContainer.insertAdjacentHTML('beforeend', videoTemplate(key));
-        console.log(videoTemplate(key))
+
     }
   
   )

@@ -1,6 +1,5 @@
 // стили только для футера
 .footer__page {
-  //   outline: 1px solid tomato;
   color: #545454;
   font-size: 16px;
   line-height: 1.18;
@@ -12,13 +11,11 @@
 
   &-icon {
     fill: #ff6b08;
-
     margin-right: 5px;
   }
 
   &-link {
     cursor: pointer;
-
     color: inherit;
   }
 
@@ -29,12 +26,10 @@
   @media screen and (max-width: 767px) {
     min-width: 320px;
   }
-
   // Контейнер для tablet
   @media screen and (min-width: 768px) {
     width: 658px;
   }
-
   // Контейнер для desktop
   @media screen and (min-width: 1024px) {
     width: 922px;

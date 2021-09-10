@@ -33,9 +33,9 @@ function creatLocalStorage() {
     localStorage.setItem(`theme`, `dark-theme`);
     document.querySelector(`.theme-switch__marker`).style.transitionDuration = '250ms'; //AB
   } else {
-    document.querySelector(`.theme-switch__marker`).style.transitionDuration = '250ms'; //AB
     localStorage.removeItem(`theme`);
     localStorage.setItem(`theme`, `light-theme`);
+    document.querySelector(`.theme-switch__marker`).style.transitionDuration = '250ms'; //AB
   }
 }
 

@@ -33,7 +33,7 @@ function changeCards(cards) {
   cards.forEach((card, i) => {
     // Проверка бага BackEnd в release_date
     if (card.release_date) {
-      card.release_date = card.release_date.substring(0, 4);
+      card.release_date.substring(0, 4);
     } else {
       // console.log(i, card.release_date);
       card.release_date = 'N/A';
@@ -45,7 +45,7 @@ function changeCards(cards) {
       }
       // Обрезаем жанры
       if (card.genre_ids.length > 3) {
-        card.genre_ids = card.genre_ids.slice(0, 3);
+        card.genre_ids.slice(0, 3);
         card.genre_ids.push(' Other');
       }
       // Подменяем названия в genre_ids

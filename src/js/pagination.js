@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import ApiService from './apiService';
-import cardsTemplate from '../templates/cards.hbs';
+// import cardsTemplate from '../templates/cards.hbs';
 import { galleryContainer } from './refs';
 import currentMovies from './currentMovies';
 import { target, spinner } from './spinner.js';

@@ -14,7 +14,7 @@ function renderWatchCard() {
   const arrAllId = [...arrWatchId];
 
   for (let id of arrAllId) {
-    apiServise.fetchMovieDetails(id).then((data) => {
+    apiService.fetchMovieDetails(id).then((data) => {
       // console.log(id);
       createCards(data);
     });

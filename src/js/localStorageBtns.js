@@ -92,15 +92,10 @@ function watchedBtnLogic() {
     watchedMovies = [];
   }
 
-  // Записуєм карточки фільмів які є на сторінці в констату
-  const movies = currentMovies.movies;
+  const movies = currentMovies.movies; // Записуєм карточки фільмів які є на сторінці в констату
+  const movieID = watchedBtn.dataset.id; //Отримуєм ID фільма який відкритий
 
-  //Отримуєм ID фільма який відкритий
-  const movieID = watchedBtn.dataset.id;
-
-  // Ставим на кнопку listener
-  watchedBtn.addEventListener('click', onWatchedClick);
-
+  watchedBtn.addEventListener('click', onWatchedClick); // Ставим на кнопку listener
   // Міняєм текст кнопки якщо вона вже була додана
   if (findMovie(watchedMovies, movieID)) {
     watchedBtn.textContent = 'Remove from watched';
@@ -118,15 +113,12 @@ function watchedBtnLogic() {
         }),
       );
 
-      // Переписуєм local storage
-      localStorage.setItem('Watched', JSON.stringify(watchedMovies));
-
+      localStorage.setItem('Watched', JSON.stringify(watchedMovies)); // Переписуєм local storage
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Remove from watched';
       Notiflix.Notify.success('The movie was successfully added to the library');
+      queuedBtn.disabled = true; // Блокуєм кнопку черги
 
-      // Блокуєм кнопку черги
-      queuedBtn.disabled = true;
       // Перевіряєм чи фільм був у черзі
       [...queuedMovies].find((movie, i) => {
         // Якщо знайшли то видаляєм

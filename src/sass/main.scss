@@ -3,12 +3,11 @@
  * Все паршалы подключаются сюда.
  */
 
-// Переменные, миксины и др -> utils
-
 // Базовые стили -> base
 @import './base/common';
 @import './base/container';
 
+// Компоненты -> components
 @import './componets/pagination';
 @import './componets/theme';
 @import './componets/arrow-up';
@@ -20,6 +19,3 @@
 @import './layout/modal-film';
 @import './layout/footer';
 @import './layout/modal-footer';
-// Секции и блоки -> layouts
-
-// Компоненты -> components

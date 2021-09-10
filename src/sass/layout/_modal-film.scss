@@ -266,18 +266,18 @@ body.modal-open {
   background-repeat: no-repeat;
   &:hover,
   &:focus {
-    background-color: rgb(233, 230, 230);
+    background-color: #e9e6e6;
 
-    border: 1px solid rgb(170, 168, 168);
+    border: 1px solid #aaa8a8;
   }
 }
 
 body.dark-theme .modal__container {
-  background-color: #333;
+  background-color: #333333;
 }
 
 body.dark-theme .about__text {
-  color: #fff;
+  color: #ffffff;
 }
 
 body.dark-theme .about__title {
@@ -285,5 +285,5 @@ body.dark-theme .about__title {
 }
 
 body.dark-theme .film__title {
-  color: #fff;
+  color: #ffffff;
 }

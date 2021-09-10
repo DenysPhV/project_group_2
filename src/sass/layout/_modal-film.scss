@@ -46,7 +46,15 @@ body.modal-open {
   color: #000000;
   z-index: 2;
   font-family: Roboto, sans-serif;
-  font-size: 12px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
   font-weight: 500;
   font-style: normal;
   line-height: calc(20 / 12);
@@ -77,15 +85,59 @@ body.modal-open {
   margin-right: auto;
   margin-bottom: 30px;
 
+  // @media screen and (min-width: 768px) and (max-width: 1023px) {
+  //   // max-width: 264px;
+  //   // height: 374px;
+  //   max-width: 170px;
+  //   height: auto;
+
+  //   margin-bottom: 0px;
+  // }
+
   @media screen and (min-width: 768px) and (max-width: 1023px) {
-    max-width: 264px;
-    height: 374px;
+    // max-width: 264px;
+    // height: 374px;
+    max-width: 170px;
+    height: auto;
+
     margin-bottom: 0px;
   }
 
   @media screen and (min-width: 1024px) {
-    max-width: 396px;
-    height: 478px;
+    // max-width: 396px;
+    // height: 478px;
+    max-width: 212px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .you-tube__video {
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    width: 170px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .you-tube__video {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 170px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .you-tube__video {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    width: 212px;
+    height: 140px;
   }
 }
 

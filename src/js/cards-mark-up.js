@@ -42,44 +42,45 @@ export function cardsMarkUp(cards) {
     //     card.genre_ids = ['N/A'];
     //   }
     // });
-    zamena(cards);
+    changeCards(cards);
     // Рендер галереи
     // galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
-    renderGallery(cards);
+    formationGallery(cards);
     modalFilmBox();
     currentMovies.movies = cards;
   } else {
     // Запрос списка жанров
     apiService.fetchGenre().then((genres) => {
-      cards.forEach((card, i) => {
-        // сохраняем в локал сторедж
-        localStorage.setItem('genres', JSON.stringify(genres));
-        // // форматируем дату
-        // card.release_date = card.release_date.substring(0, 4);
-        // // Обрезаем жанры
-        // if (card.genre_ids.length > 3) {
-        //   card.genre_ids = card.genre_ids.slice(0, 3);
-        //   card.genre_ids.push('other');
-        // }
-        // // Подменяем названия в genre_ids
-        // card.genre_ids.forEach((genre, index) => {
-        //   genres.forEach((genrCard) => {
-        //     console.log('genres', genres);
-        //     if (genrCard.id === genre) card.genre_ids[index] = ' ' + genrCard.name;
-        //   });
-        // });
-        zamena(cards);
-      });
+      localStorage.setItem('genres', JSON.stringify(genres));
+      // cards.forEach((card, i) => {
+      // сохраняем в локал сторедж
+
+      // // форматируем дату
+      // card.release_date = card.release_date.substring(0, 4);
+      // // Обрезаем жанры
+      // if (card.genre_ids.length > 3) {
+      //   card.genre_ids = card.genre_ids.slice(0, 3);
+      //   card.genre_ids.push('other');
+      // }
+      // // Подменяем названия в genre_ids
+      // card.genre_ids.forEach((genre, index) => {
+      //   genres.forEach((genrCard) => {
+      //     console.log('genres', genres);
+      //     if (genrCard.id === genre) card.genre_ids[index] = ' ' + genrCard.name;
+      //   });
+      // });
+      changeCards(cards);
+      // });
       // // Рендер галереи
       // galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
-      renderGallery(cards);
+      formationGallery(cards);
       modalFilmBox();
       currentMovies.movies = cards;
     });
   }
 }
 
-function zamena(cards) {
+function changeCards(cards) {
   const filmGenres = localStorage.getItem('genres');
   const parsedFilmGenres = JSON.parse(filmGenres);
   cards.forEach((card, i) => {
@@ -97,7 +98,7 @@ function zamena(cards) {
       // Обрезаем жанры
       if (card.genre_ids.length > 3) {
         card.genre_ids = card.genre_ids.slice(0, 3);
-        card.genre_ids.push('other');
+        card.genre_ids.push(' other');
       }
       // Подменяем названия в genre_ids
 
@@ -114,7 +115,7 @@ function zamena(cards) {
   return cards;
 }
 
-function renderGallery(cards) {
+function formationGallery(cards) {
   // Рендер галереи
   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(cards));
 }

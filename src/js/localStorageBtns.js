@@ -61,6 +61,7 @@ function queueBtnLogic() {
       // Міняєм текст кнопки
       queuedBtn.textContent = 'Remove from queue';
       Notiflix.Notify.success('The movie was successfully added to the library');
+      // queuedBtn.classList.add('film__button--disabled');
     } else {
       // Шукаєм фільм який потрібно видалити
       [...queuedMovies].find((movie, i) => {
@@ -117,7 +118,11 @@ function watchedBtnLogic() {
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Remove from watched';
       Notiflix.Notify.success('The movie was successfully added to the library');
-      queuedBtn.disabled = true; // Блокуєм кнопку черги
+      // Блокуєм кнопку черги
+      queuedBtn.disabled = true;
+      // подмена стилей которая работает
+      queuedBtn.classList.add('film__button--disabled'); //высокотехнологический костыль
+      queuedBtn.classList.remove('film__button');
 
       // Перевіряєм чи фільм був у черзі
       [...queuedMovies].find((movie, i) => {
@@ -141,8 +146,11 @@ function watchedBtnLogic() {
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Add to watched';
       Notiflix.Notify.warning('You have deleted your movie from the library!');
-
+      // Не Блокуєм кнопку черги
       queuedBtn.disabled = false;
+      // подмена стилей которая работает
+      queuedBtn.classList.add('film__button');
+      queuedBtn.classList.remove('film__button--disabled'); //высокотехнологический костыль
     }
     // Перемальовуєм картки фільмів
     reMarkupCards();
@@ -174,3 +182,8 @@ function findMovie(allMovies, movieToFindID) {
     }
   });
 }
+
+//  queuedBtn.classList.add('film__button--disabled');
+//  queuedBtn.classList.add('film__button');
+//  queuedBtn.classList.remove('film__button--disabled');
+//  queuedBtn.classList.remove('film__button');

@@ -101,6 +101,7 @@ arrFooterDev.map(({ name, position, preview, linkedin, github }) => {
     openModalBtn: document.querySelector('[data-modal-open]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
     modal: document.querySelector('[data-modal]'),
+    body: document.querySelector('body'),
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
@@ -108,5 +109,6 @@ arrFooterDev.map(({ name, position, preview, linkedin, github }) => {
 
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
+    refs.body.classList.toggle('footer-modal-open');
   }
 })();

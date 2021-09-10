@@ -13,9 +13,9 @@ const apiService = new ApiService();
 // Опции для отрисовки пагинации с документации
 const options = {
   totalItems: 1000,
-  itemsPerPage: 10,
+  itemsPerPage: 1,
   visiblePages: 5,
-  page: 5,
+  page: 1,
   centerAlign: false,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
@@ -37,10 +37,13 @@ const options = {
   },
 };
 
+export { options };
+
 const pagination = new Pagination('#tui-pagination-container', options);
+const page = pagination.getCurrentPage();
 
 // Запрос в фетч и рендер карточек
-apiService.fetchTrending(1).then((res) => {
+apiService.fetchTrending(page).then((res) => {
   pagination.reset(res.total_pages);
   cardsMarkUp(res.results);
 });
@@ -49,20 +52,15 @@ apiService.fetchTrending(1).then((res) => {
 pagination.on('afterMove', (e) => {
   spinner.spin(target);
   const currentPage = e.page;
+  clearGallery();
   window.scrollTo(scrollX, 0);
 
-  clearGallery();
   apiService.fetchTrending(currentPage).then((res) => {
     cardsMarkUp(res.results);
     currentMovies.movies = res.results;
     setTimeout(() => spinner.stop(), 1000);
   });
 });
-
-// Рендер карточки
-// function renderGallery(data) {
-//   galleryContainer.insertAdjacentHTML('beforeend', cardsTemplate(data));
-// }
 
 // Очистка галерии
 function clearGallery() {

@@ -13,6 +13,7 @@ ref.themeSwitch.addEventListener('change', onChecked);
 
 function onChecked() {
   const check = ref.themeSwitch.checked;
+
   if (check) {
     ref.body.classList.add(`dark-theme`);
     ref.body.classList.remove(`light-theme`);
@@ -30,7 +31,9 @@ function creatLocalStorage() {
   const check = ref.themeSwitch.checked;
   if (check) {
     localStorage.setItem(`theme`, `dark-theme`);
+    document.querySelector(`.theme-switch__marker`).style.transitionDuration = '250ms'; //AB
   } else {
+    document.querySelector(`.theme-switch__marker`).style.transitionDuration = '250ms'; //AB
     localStorage.removeItem(`theme`);
     localStorage.setItem(`theme`, `light-theme`);
   }

@@ -1,5 +1,5 @@
 .header {
-  padding-top: 46px;
+  padding-top: 25px;
   padding-bottom: 61px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -78,6 +78,7 @@
     position: relative;
     display: flex;
     align-items: flex-end;
+    margin-top: 5px;
   }
 
   &__input {
@@ -314,4 +315,30 @@
 .activeBtn {
   background-color: #ff6b01;
   border-color: #ff6b01;
+}
+
+// *******************
+.authenticate {
+  display: flex;
+  align-items: center;
+}
+.user__name {
+  display: inline;
+  margin-left: auto;
+  margin-right: 50px;
+  font-size: 16px;
+}
+
+.authenticate__btn {
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.17;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  color: inherit;
 }

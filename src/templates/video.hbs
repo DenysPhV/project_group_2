@@ -6,7 +6,6 @@
 
 </div> --}}
 
-
 {{!-- <div class="you-tube__video">
     <iframe
     width="212" height="140" 
@@ -17,11 +16,16 @@
 
 </div> --}}
 
-<div class="you-tube__video">
-    <iframe width= "100%" height="100%"
-     src="https://www.youtube.com/embed/{{this}}"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
+<div class='you-tube__video'>
+  <iframe
+    width='100%'
+    height='480px'
+    {{! MK }}
+    src='https://www.youtube.com/embed/{{this}}'
+    title='YouTube video player'
+    frameborder='0'
+    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+    allowfullscreen
+  >
+  </iframe>
 </div>

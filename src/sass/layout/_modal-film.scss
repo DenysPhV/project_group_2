@@ -61,6 +61,7 @@ body.modal-open {
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     display: flex;
+    flex-direction: column; //MK
     margin: auto;
     width: 618px;
     min-height: 457px;
@@ -69,10 +70,16 @@ body.modal-open {
 
   @media screen and (min-width: 1024px) {
     display: flex;
+    flex-direction: column; //MK
     width: 882px;
     height: 568px;
     padding: 50px 30px 40px 30px;
   }
+}
+
+.film__about {
+  //MK
+  display: flex;
 }
 // Изображение постера фильма
 .image {
@@ -111,33 +118,38 @@ body.modal-open {
   }
 }
 
+.you-tube__video {
+  margin-top: 25px;
+  // height: 75vh;
+}
+
 @media screen and (max-width: 768px) {
   .you-tube__video {
-    position: absolute;
-    left: 20px;
-    bottom: 40px;
-    width: 170px;
-    height: 110px;
+    // position: absolute;
+    // left: 20px;
+    // bottom: 40px;
+    // width: 170px;
+    // height: 110px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .you-tube__video {
-    position: absolute;
-    left: 30px;
-    bottom: 40px;
-    width: 170px;
-    height: 110px;
+    // position: absolute;
+    // left: 30px;
+    // bottom: 40px;
+    // width: 170px;
+    // height: 110px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .you-tube__video {
-    position: absolute;
-    left: 30px;
-    bottom: 40px;
-    width: 212px;
-    height: 140px;
+    // position: absolute;
+    // left: 30px;
+    // bottom: 40px;
+    // width: 212px;
+    // height: 140px;
   }
 }
 

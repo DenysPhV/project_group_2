@@ -2,11 +2,8 @@ import { galleryContainer, modalContainer, body } from './refs.js';
 import modalFilmTemplate from '../templates/modal-film.hbs';
 import ApiService from './apiService';
 import { watchedBtnLogic, queueBtnLogic } from './localStorageBtns';
-import videoTemplate from '../templates/video.hbs'
+import videoTemplate from '../templates/video.hbs';
 import currentMovies from './currentMovies.js';
-
-
-
 
 const apiService = new ApiService();
 
@@ -24,7 +21,7 @@ function onClick(event) {
 
   // Запрос по id на сервер
   apiService.fetchMovieDetails(filmId).then((card) => {
-  //  console.log(card);
+    //  console.log(card);
     // Проверяет количество жаров
     if (card.genres.length > 3) {
       card.genres = card.genres.slice(0, 3);
@@ -35,13 +32,12 @@ function onClick(event) {
       ? (card.poster_path = 'https://www.themoviedb.org/t/p/w300' + card.poster_path)
       : (card.poster_path =
           'https://upload.wikimedia.org/wikipedia/commons/c/c2/No_image_poster.png');
-   // console.log(card.poster_path);
+    // console.log(card.poster_path);
     // Запуск функции рендер модалки
     modalMarkUp(card);
     // Запуск функции открытия модалки
     modalOpenClick();
-})  
-  
+  });
 }
 
 // Функция рендеринг модалки
@@ -65,12 +61,12 @@ function modalOpenClick() {
   refsOverlay.addEventListener('click', overlayClick);
   // Ставим слушатель нажатых клавиш
   window.addEventListener('keydown', pressKey);
-
-
+  const img = document.querySelector('.image'); //MK
+  img.addEventListener('click', playMovieMarkUp); //MK
 
   watchedBtnLogic();
   queueBtnLogic();
-  playMovieMarkUp();
+  // playMovieMarkUp();
 }
 
 // Функция закрытия модалки
@@ -107,30 +103,22 @@ function pressKey(event) {
   }
 }
 
-
-
-
 function playMovieMarkUp(event) {
-   const watchMovie = document.querySelector('.film__btnQueue');
-  watchMovie.addEventListener('click', playMovieMarkUp);
+  const watchMovie = document.querySelector('.film__btnQueue');
+  const movieId = watchMovie.dataset.id;
 
-  const movieId = watchMovie.dataset.id
-  apiService.fetchVideo(movieId).then((card) => {
-    const key = card[0].key;
-
- 
-    return key
-  }).then(
-    key => {
+  apiService
+    .fetchVideo(movieId)
+    .then((card) => {
+      const key = card[0].key;
+      return key;
+    })
+    .then((key) => {
       const modalContainer = document.querySelector('.modal__container');
       modalContainer.insertAdjacentHTML('beforeend', videoTemplate(key));
-
-    }
-  
-  )
- 
+      modalContainer.lastElementChild.scrollIntoView({
+        //MK
+        behavior: 'smooth',
+      });
+    });
 }
- 
-
-
-

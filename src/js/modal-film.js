@@ -22,7 +22,6 @@ function onClick(event) {
   // Запрос по id на сервер
   apiService.fetchMovieDetails(filmId).then((card) => {
     //  console.log(card);
-
     // Проверяет количество жаров
     if (card.genres.length > 3) {
       card.genres = card.genres.slice(0, 3);
@@ -58,9 +57,30 @@ function modalOpenClick() {
 
   window.addEventListener('keydown', pressKey); // Ставим слушатель нажатых клавиш
 
+  const moviePoster = document.querySelector('.image'); //MK
+  moviePoster.addEventListener('click', playMovieMarkUp); //MK
+
   watchedBtnLogic();
   queueBtnLogic();
-  playMovieMarkUp();
+
+  function playMovieMarkUp() {
+    moviePoster.removeEventListener('click', playMovieMarkUp);
+    const movieId = document.querySelector('.film__btnQueue').dataset.id;
+    apiService
+      .fetchVideo(movieId)
+      .then((card) => {
+        const key = card[0].key;
+        return key;
+      })
+      .then((key) => {
+        const modalContainer = document.querySelector('.modal__container');
+        modalContainer.insertAdjacentHTML('beforeend', videoTemplate(key));
+        modalContainer.lastElementChild.scrollIntoView({
+          //MK
+          behavior: 'smooth',
+        });
+      });
+  }
 }
 
 // Функция закрытия модалки
@@ -92,21 +112,4 @@ function pressKey(event) {
   if (event.key === 'Escape') {
     modalClose();
   }
-}
-
-function playMovieMarkUp(event) {
-  const watchMovie = document.querySelector('.film__btnQueue');
-  watchMovie.addEventListener('click', playMovieMarkUp);
-
-  const movieId = watchMovie.dataset.id;
-  apiService
-    .fetchVideo(movieId)
-    .then((card) => {
-      const key = card[0].key;
-      return key;
-    })
-    .then((key) => {
-      const modalContainer = document.querySelector('.modal__container');
-      modalContainer.insertAdjacentHTML('beforeend', videoTemplate(key));
-    });
 }

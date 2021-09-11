@@ -1,3 +1,4 @@
+// массив объектов команды
 const arrFooterDev = [
   {
     name: 'Andrii Lypovetskyi',
@@ -66,12 +67,8 @@ const arrFooterDev = [
   },
 ];
 
-//  <svg class="footer-modal__icon" width="32" height="32"><use href="./images/sprite.svg#linkedin"></use></svg>
-
-//  <svg class="footer-modal__icon" width="32" height="32"><use href="./images/sprite.svg#github"></use></svg>
-
 const itemFooterDev = document.querySelector('.footer-modal__list');
-arrFooterDev.map(({ name, position, preview, linkedin, github, slack }, index) => {
+arrFooterDev.map(({ name, position, preview, linkedin, github }) => {
   itemFooterDev.insertAdjacentHTML(
     'afterbegin',
     `<li class="footer-modal__item">
@@ -98,12 +95,13 @@ arrFooterDev.map(({ name, position, preview, linkedin, github, slack }, index) =
   `,
   );
 });
-
+//IIFE
 (() => {
   const refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
     modal: document.querySelector('[data-modal]'),
+    body: document.querySelector('body'),
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
@@ -111,5 +109,6 @@ arrFooterDev.map(({ name, position, preview, linkedin, github, slack }, index) =
 
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
+    refs.body.classList.toggle('footer-modal-open');
   }
 })();

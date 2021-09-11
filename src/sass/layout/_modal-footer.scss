@@ -1,5 +1,21 @@
 //hystmodal
-body.footer-modal {
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+ion-icon {
+  color: #000000;
+}
+
+ion-icon:hover,
+ion-icon:focus {
+  color: #ff6b08;
+}
+
+.footer-modal-open {
   overflow: hidden;
 }
 
@@ -100,7 +116,7 @@ body.footer-modal {
   &__btn {
     position: absolute;
     top: 10px;
-    right: 15px;
+    right: 20px;
 
     width: 30px;
     height: 30px;
@@ -111,7 +127,7 @@ body.footer-modal {
     border: none;
     border-radius: 50%;
 
-    background-color: rgb(233, 230, 230);
+    background-color: #e9e6e6;
     color: #ffffff;
     &:hover,
     &:focus {
@@ -177,19 +193,4 @@ body.footer-modal {
       padding-top: 10px;
     }
   }
-}
-
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-ion-icon {
-  color: #000000;
-}
-
-ion-icon:hover,
-ion-icon:focus {
-  color: #ff6b08;
 }

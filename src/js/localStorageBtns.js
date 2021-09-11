@@ -61,6 +61,7 @@ function queueBtnLogic() {
       // Міняєм текст кнопки
       queuedBtn.textContent = 'Remove from queue';
       Notiflix.Notify.success('The movie was successfully added to the library');
+      // queuedBtn.classList.add('film__button--disabled');
     } else {
       // Шукаєм фільм який потрібно видалити
       [...queuedMovies].find((movie, i) => {
@@ -92,15 +93,10 @@ function watchedBtnLogic() {
     watchedMovies = [];
   }
 
-  // Записуєм карточки фільмів які є на сторінці в констату
-  const movies = currentMovies.movies;
+  const movies = currentMovies.movies; // Записуєм карточки фільмів які є на сторінці в констату
+  const movieID = watchedBtn.dataset.id; //Отримуєм ID фільма який відкритий
 
-  //Отримуєм ID фільма який відкритий
-  const movieID = watchedBtn.dataset.id;
-
-  // Ставим на кнопку listener
-  watchedBtn.addEventListener('click', onWatchedClick);
-
+  watchedBtn.addEventListener('click', onWatchedClick); // Ставим на кнопку listener
   // Міняєм текст кнопки якщо вона вже була додана
   if (findMovie(watchedMovies, movieID)) {
     watchedBtn.textContent = 'Remove from watched';
@@ -118,15 +114,16 @@ function watchedBtnLogic() {
         }),
       );
 
-      // Переписуєм local storage
-      localStorage.setItem('Watched', JSON.stringify(watchedMovies));
-
+      localStorage.setItem('Watched', JSON.stringify(watchedMovies)); // Переписуєм local storage
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Remove from watched';
       Notiflix.Notify.success('The movie was successfully added to the library');
-
       // Блокуєм кнопку черги
       queuedBtn.disabled = true;
+      // подмена стилей которая работает
+      queuedBtn.classList.add('film__button--disabled'); //высокотехнологический костыль
+      queuedBtn.classList.remove('film__button');
+
       // Перевіряєм чи фільм був у черзі
       [...queuedMovies].find((movie, i) => {
         // Якщо знайшли то видаляєм
@@ -149,8 +146,11 @@ function watchedBtnLogic() {
       // Міняєм текст кнопки
       watchedBtn.textContent = 'Add to watched';
       Notiflix.Notify.warning('You have deleted your movie from the library!');
-
+      // Не Блокуєм кнопку черги
       queuedBtn.disabled = false;
+      // подмена стилей которая работает
+      queuedBtn.classList.add('film__button');
+      queuedBtn.classList.remove('film__button--disabled'); //высокотехнологический костыль
     }
     // Перемальовуєм картки фільмів
     reMarkupCards();
@@ -182,3 +182,8 @@ function findMovie(allMovies, movieToFindID) {
     }
   });
 }
+
+//  queuedBtn.classList.add('film__button--disabled');
+//  queuedBtn.classList.add('film__button');
+//  queuedBtn.classList.remove('film__button--disabled');
+//  queuedBtn.classList.remove('film__button');

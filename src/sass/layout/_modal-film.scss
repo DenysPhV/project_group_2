@@ -246,6 +246,31 @@ body.modal-open {
     width: 136px;
   }
 }
+
+.film__button--disabled {
+  width: 112px;
+  height: 44px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  &:first-child {
+    margin-right: 15px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 125px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
+}
+
 // Кнопка закрытия
 .close__button {
   position: absolute;
@@ -278,18 +303,18 @@ body.modal-open {
   background-repeat: no-repeat;
   &:hover,
   &:focus {
-    background-color: rgb(233, 230, 230);
+    background-color: #e9e6e6;
 
-    border: 1px solid rgb(170, 168, 168);
+    border: 1px solid #aaa8a8;
   }
 }
 
 body.dark-theme .modal__container {
-  background-color: #333;
+  background-color: #333333;
 }
 
 body.dark-theme .about__text {
-  color: #fff;
+  color: #ffffff;
 }
 
 body.dark-theme .about__title {
@@ -297,5 +322,5 @@ body.dark-theme .about__title {
 }
 
 body.dark-theme .film__title {
-  color: #fff;
+  color: #ffffff;
 }

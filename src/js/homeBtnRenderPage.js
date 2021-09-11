@@ -14,7 +14,6 @@ const apiService = new ApiService();
 
 export const renderMainPageOnClick = (e) => {
   galleryContainer.innerHTML = '';
-  // document.querySelector('.pagination-thumb').innerHTML = '';
   spinner.spin(target);
   e.preventDefault();
   homeBtnEl.classList.add('nav-menu__btn_active');
@@ -23,7 +22,7 @@ export const renderMainPageOnClick = (e) => {
   searchForm.classList.add('input-wrap_searchIcon');
 
   libBtnEl.classList.add('nav-menu__btn_hover');
-  // comment ??????
+
   apiService
     .fetchTrending(1)
     .then((data) => {
@@ -36,12 +35,9 @@ export const renderMainPageOnClick = (e) => {
       spinner.stop();
     });
 
-  // document.querySelector('.pagination-thumb').innerHTML =
-  //   '<div id="tui-pagination-container" class="tui-pagination"></div>';
-
   pagination.on('afterMove', (e) => {
     spinner.spin(target);
-    console.log(e);
+    // console.log(e);
     const currentPage = e.page;
     window.scrollTo(scrollX, 0);
     galleryContainer.innerHTML = '';

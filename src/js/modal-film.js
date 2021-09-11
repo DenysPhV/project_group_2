@@ -57,7 +57,7 @@ function modalOpenClick() {
 
   window.addEventListener('keydown', pressKey); // Ставим слушатель нажатых клавиш
 
-  const moviePoster = document.querySelector('.image'); //MK
+  const moviePoster = document.querySelector('.film__imgBox'); //MK
   moviePoster.addEventListener('click', playMovieMarkUp); //MK
 
   watchedBtnLogic();

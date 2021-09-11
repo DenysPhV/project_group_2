@@ -46,6 +46,10 @@ body.modal-open {
   z-index: 2;
   font-family: Roboto, sans-serif;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   @media screen and (max-width: 768px) {
     font-size: 12px;
   }

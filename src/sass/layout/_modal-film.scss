@@ -136,10 +136,27 @@ body.modal-open {
 }
 
 .film__imgBox {
+  position: relative;
+  cursor: pointer;
   @media screen and (min-width: 768px) {
     margin-right: 30px;
   }
 }
+
+.image__playIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  fill: rgba(255, 107, 8, 0.6);
+  width: 130px;
+  height: 90px;
+  transform: translate(-50%, -50%);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.film__imgBox:hover .image__playIcon {
+  fill: rgba(255, 107, 8, 1);
+}
+
 // Информация про фильм
 .film__infoBox {
   text-align: star;

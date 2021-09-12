@@ -1,45 +1,41 @@
 import { initializeApp } from 'firebase/app';
-import {
-  getAuth,
-  signOut,
-  signInWithPopup,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-} from 'firebase/auth';
+import { getAuth, signOut, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
 import { authInGoogle, authOutGoogle, userName } from './refs';
 import { firebaseConfig } from './firebaseConfig';
+import { readUserData } from './firebaseData';
 
 initializeApp(firebaseConfig); // Initialize Firebase
 authInGoogle.addEventListener('click', signInGoogle);
 authOutGoogle.addEventListener('click', signOutGoogle);
+
+function onAuthState() {
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      userName.textContent = user.displayName;
+      authInGoogle.style.display = 'none';
+      authOutGoogle.style.display = 'inline';
+    } 
+  });
+}
 
 function signInGoogle() {
   const provider = new GoogleAuthProvider();
   const auth = getAuth();
   signInWithPopup(auth, provider)
     .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
       const user = result.user;
-      // ...
+      readUserData(user.uid);
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
-      // console.log(result.user.displayName);
-    })
+      window.location.reload(false); 
+  })
     .catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
+      console.error(error);
     });
 }
+
 function signOutGoogle() {
   const auth = getAuth();
   signOut(auth)
@@ -47,26 +43,12 @@ function signOutGoogle() {
       userName.textContent = '';
       authInGoogle.style.display = 'inline';
       authOutGoogle.style.display = 'none';
-      // Sign-out successful.
+      localStorage.clear();
+    window.location.reload(false); 
     })
     .catch((error) => {
-      // An error happened.
+      console.error(error);
     });
 }
-function onAuthState() {
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      userName.textContent = user.displayName;
-      authInGoogle.style.display = 'none';
-      authOutGoogle.style.display = 'inline';
-      const uid = user.uid;
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
-  });
-}
+
 onAuthState();

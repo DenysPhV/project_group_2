@@ -4,6 +4,7 @@ export { watchedBtnLogic, queueBtnLogic };
 import currentMovies from './currentMovies';
 import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns';
 import Notiflix from 'notiflix';
+import { writeUserData } from "./firebaseData";
 let queuedMovies = null;
 let watchedMovies = null;
 
@@ -173,6 +174,7 @@ function reMarkupCards() {
       onQueueBtnClick();
     }
   }
+  writeUserData();
 }
 
 function findMovie(allMovies, movieToFindID) {

@@ -118,6 +118,7 @@
   .gallery__item:focus {
     cursor: pointer;
     box-shadow: 10px 10px 10px #f54803;
+    transition: box-shadow linear 250ms; // AB
   }
 
   .gallery__item {

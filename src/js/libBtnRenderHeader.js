@@ -1,4 +1,4 @@
-// comment ??????
+// Скрипт отвечает за перерисовку секции header после нажатия на кнопку MY LIBRARY
 import {
   homeBtnEl,
   logoEl,
@@ -12,7 +12,6 @@ import { renderMainPageOnClick, renderInputOnClick } from './homeBtnRenderPage';
 import { onWatchedBtnClick, onQueueBtnClick } from './myLibraryBtns.js'; //MK
 import Notiflix from 'notiflix';
 
-// comment ??????
 export const renderLibHeaderOnClick = () => {
   libBtnEl.classList.add('nav-menu__btn_active');
   homeBtnEl.classList.add('nav-menu__btn_hover');
@@ -21,13 +20,9 @@ export const renderLibHeaderOnClick = () => {
   searchForm.classList.remove('input-wrap_searchIcon');
   notification.textContent = '';
   searchForm.innerHTML =
-    '<div class="header__btn-box"><button class="header__watch-btn " type="button" >Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
-
-  // searchForm.innerHTML =
-  //   '<div class="header__btn-box"><button class="header__watch-btn " type="button" >Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
+    '<div class="header__btn-box"><button class="header__watch-btn header__watch-btn_active" type="button" >Watched</button><button class="header__queue-btn" type="button">queue</button></div>';
 
   libBtnEl.removeEventListener('click', renderLibHeaderOnClick);
-
   homeBtnEl.addEventListener('click', renderMainPageOnClick);
   logoEl.addEventListener('click', renderMainPageOnClick);
   homeBtnEl.addEventListener('click', renderInputOnClick);
@@ -36,7 +31,6 @@ export const renderLibHeaderOnClick = () => {
   changeBgcLibBtn();
 };
 
-// comment ??????
 const changeBgcLibBtn = () => {
   const watchBtnEl = document.querySelector('.header__watch-btn');
   const queueBtnEl = document.querySelector('.header__queue-btn');

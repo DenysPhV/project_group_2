@@ -16,7 +16,8 @@ body.dark-theme {
 
   //AB
   @media screen and (max-width: 767px) {
-    transform: rotate(90deg) scale(0.8);
+    transform: rotate(90deg) scale(0.7);
+    top: -14px;
     right: -40px;
   }
 }
@@ -29,16 +30,14 @@ body.dark-theme {
 
 .theme-switch__icon {
   color: #fff;
-  height: 15px;
-  width: 15px;
+  height: 13px;
+  width: 13px;
   margin-right: 4px;
   margin-left: 4px;
 
   //AB
   @media screen and (max-width: 767px) {
     transform: rotate(-90deg);
-    height: 15px;
-    width: 15px;
   }
 }
 
@@ -48,7 +47,7 @@ body.dark-theme {
   flex-shrink: 0;
   position: relative;
   width: 50px;
-  height: 19px; //AB
+  height: 17px; //AB
   border-radius: 50em;
   padding: 3px 0;
 }

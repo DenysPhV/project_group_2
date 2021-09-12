@@ -111,7 +111,8 @@ arrFooterDev.map(({ name, position, preview, linkedin, github }) => {
   // закрытие по эскейпу
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
-      toggleModal();
+      refs.modal.classList.add('is-hidden');
+      refs.body.classList.remove('footer-modal-open');
     }
   });
 

@@ -37,7 +37,6 @@ export const renderMainPageOnClick = (e) => {
 
   pagination.on('afterMove', (e) => {
     spinner.spin(target);
-    // console.log(e);
     const currentPage = e.page;
     window.scrollTo(scrollX, 0);
     galleryContainer.innerHTML = '';
@@ -56,6 +55,22 @@ export const renderInputOnClick = () => {
   searchForm.innerHTML = '<input class="header__input" type="text" placeholder="Search movies" />';
   homeBtnEl.removeEventListener('click', renderInputOnClick);
   logoEl.removeEventListener('click', renderInputOnClick);
+  searchIconShowToggle();
 };
 
 logoEl.addEventListener('click', renderMainPageOnClick);
+searchIconShowToggle();
+
+// Функция скрывает/отображает иконку поиска при событиях фокуса и потери фокуса соответственно
+function searchIconShowToggle() {
+  const inputEl = document.querySelector('.header__input');
+  const clearSearchIcon = () => {
+    searchForm.classList.remove('input-wrap_searchIcon');
+  };
+  const addSearchIcon = () => {
+    searchForm.classList.add('input-wrap_searchIcon');
+  };
+
+  inputEl.addEventListener('focus', clearSearchIcon);
+  inputEl.addEventListener('blur', addSearchIcon);
+}

@@ -29,6 +29,7 @@ function signInGoogle() {
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
+      window.location.reload(false); 
   })
     .catch((error) => {
       console.error(error);

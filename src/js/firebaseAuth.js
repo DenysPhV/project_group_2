@@ -29,7 +29,7 @@ function signInGoogle() {
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
-      window.location.reload(false); 
+//       window.location.reload(false); 
   })
     .catch((error) => {
       console.error(error);
@@ -44,7 +44,7 @@ function signOutGoogle() {
       authInGoogle.style.display = 'inline';
       authOutGoogle.style.display = 'none';
       localStorage.clear();
-    window.location.reload(false); 
+//     window.location.reload(false); 
     })
     .catch((error) => {
       console.error(error);

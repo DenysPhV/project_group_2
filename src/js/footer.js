@@ -95,7 +95,8 @@ arrFooterDev.map(({ name, position, preview, linkedin, github }) => {
   `,
   );
 });
-//IIFE
+
+//IIFE - эта функция быстрого запуска
 (() => {
   const refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),
@@ -107,8 +108,28 @@ arrFooterDev.map(({ name, position, preview, linkedin, github }) => {
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
+  // закрытие по эскейпу
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      toggleModal();
+    }
+  });
+
+  // заменна классов и закрытия модалки
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
     refs.body.classList.toggle('footer-modal-open');
   }
 })();
+
+// закрытие по клику в пусто (не в теле IIFE сразу выполняется)
+const body = document.querySelector('body');
+const modal = document.querySelector('[data-modal]');
+modal.addEventListener('click', clickOut);
+
+function clickOut(e) {
+  if (e.target.localName !== 'img') {
+    modal.classList.add('is-hidden');
+    body.classList.remove('footer-modal-open');
+  }
+}

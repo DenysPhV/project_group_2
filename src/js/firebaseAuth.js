@@ -21,6 +21,9 @@ function onAuthState() {
       userName.textContent = user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
+
+      readUserData(user.uid);
+
     }
   });
 }
@@ -31,11 +34,13 @@ function signInGoogle() {
   signInWithPopup(auth, provider)
     .then((result) => {
       const user = result.user;
-      readUserData(user.uid);
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
-      //       window.location.reload(false);
+
+      window.location.reload(false);
+
+
     })
     .catch((error) => {
       console.error(error);
@@ -50,8 +55,10 @@ function signOutGoogle() {
       authInGoogle.style.display = 'inline';
       authOutGoogle.style.display = 'none';
       localStorage.clear();
-      //     window.location.reload(false);
-      document.location.reload(false);
+   
+     window.location.reload(false);
+
+
     })
     .catch((error) => {
       console.error(error);

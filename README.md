@@ -1,2 +1,2 @@
-# <span color: #ff6b08;>Run</span>IT
+# <span>Run</span>IT
 

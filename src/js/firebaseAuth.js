@@ -1,5 +1,11 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signOut, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
+import {
+  getAuth,
+  signOut,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+} from 'firebase/auth';
 import { authInGoogle, authOutGoogle, userName } from './refs';
 import { firebaseConfig } from './firebaseConfig';
 import { readUserData } from './firebaseData';
@@ -15,7 +21,7 @@ function onAuthState() {
       userName.textContent = user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
-    } 
+    }
   });
 }
 
@@ -29,8 +35,8 @@ function signInGoogle() {
       userName.textContent = result.user.displayName;
       authInGoogle.style.display = 'none';
       authOutGoogle.style.display = 'inline';
-//       window.location.reload(false); 
-  })
+      //       window.location.reload(false);
+    })
     .catch((error) => {
       console.error(error);
     });
@@ -44,7 +50,8 @@ function signOutGoogle() {
       authInGoogle.style.display = 'inline';
       authOutGoogle.style.display = 'none';
       localStorage.clear();
-//     window.location.reload(false); 
+      //     window.location.reload(false);
+      document.location.reload(false);
     })
     .catch((error) => {
       console.error(error);

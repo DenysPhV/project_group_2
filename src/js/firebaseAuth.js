@@ -44,6 +44,7 @@ function signOutGoogle() {
       authInGoogle.style.display = 'inline';
       authOutGoogle.style.display = 'none';
       localStorage.clear();
+    window.location.reload(false); 
     })
     .catch((error) => {
       console.error(error);

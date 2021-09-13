@@ -6,6 +6,7 @@
   .poster {
     width: 280px;
     height: 398px;
+    border-radius: 8px;
   }
 
   .gallery__item:not(:last-child) {
@@ -92,6 +93,7 @@
   .poster {
     width: 293px;
     height: 398px;
+    border-radius: 8px;
   }
 
   body.dark-theme .movie-name {

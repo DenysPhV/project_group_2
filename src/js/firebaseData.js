@@ -5,13 +5,15 @@ function writeUserData() {
   const auth = getAuth();
   const db = getDatabase();
   const user = auth.currentUser;
+  if (!user) {
+    return;
+  };
   const userId = user.uid;
   const name = user.displayName;
   const email = user.email;
   const imageUrl = user.photoURL;
   let queued = localStorage.getItem('Queued');
   let watched = localStorage.getItem('Watched');
-
   set(ref(db, 'users/' + userId), {
     username: name,
     email: email,
@@ -28,6 +30,9 @@ function readUserData(userId) {
   get(child(dbRef, `users/${userId}`))
     .then((data) => {
       let locStor = data.val().local_storage;
+      if (!locStor) {
+        return;
+      };
       if (data.exists()) {
         if (locStor.Queued) {
           localStorage.setItem('Queued', JSON.stringify(locStor.Queued));

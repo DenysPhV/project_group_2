@@ -13,6 +13,7 @@ export default function modalFilmBox() {
 // Функция отработки нажатия мышки
 function onClick(event) {
   event.preventDefault();
+  galleryContainer.removeEventListener('click', onClick); // Снимаем слушатель с галереи
   if (event.target.nodeName !== 'IMG') {
     return;
   }
@@ -47,7 +48,6 @@ function modalMarkUp(card) {
 function modalOpenClick() {
   modalContainer.classList.add('is-open'); // Добавляем стиль is-open
   body.classList.add('modal-open'); // Добавляем стиль modal-open - блокировка скрола
-  galleryContainer.removeEventListener('click', onClick); // Снимаем слушатель с галереи
 
   const modalBtnClose = document.querySelector('.close__button'); // Ставим слушатель на кнопку Close
   modalBtnClose.addEventListener('click', modalClose);

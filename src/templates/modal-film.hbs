@@ -42,11 +42,11 @@
           </li>
           <li class='film__item'>
             <p class='film__properties'>Original Title</p>
-            <p>{{original_title}}</p>
+            <p class='properties__data--divider'>{{original_title}}</p>
           </li>
           <li class='film__item'>
             <p class='film__properties'>Genre</p>
-            <p>
+            <p class='properties__data--divider'>
               {{#if genres}}
                 {{#each genres}}
                   <span>{{this.name}}{{#unless @last}},{{/unless}}</span>

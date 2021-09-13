@@ -23,29 +23,34 @@ export const renderMainPageOnClick = (e) => {
 
   libBtnEl.classList.add('nav-menu__btn_hover');
 
-  apiService
-    .fetchTrending(1)
-    .then((data) => {
-      currentMovies.movies = data.results; //MK
-      pagination.reset(data.total_pages);
-      return data.results;
-    })
-    .then(cardsMarkUp)
-    .then(() => {
-      spinner.stop();
-    });
+  const pagination = new Pagination('#tui-pagination-container', options);
+  const page = pagination.getCurrentPage();
 
+  // Запрос в фетч и рендер карточек
+  apiService.fetchTrending(page).then((res) => {
+    pagination.reset(res.total_pages);
+    cardsMarkUp(res.results);
+    setTimeout(() => spinner.stop(), 1000);
+  });
+
+  // Функция пагинации
   pagination.on('afterMove', (e) => {
     spinner.spin(target);
     const currentPage = e.page;
+    clearGallery();
     window.scrollTo(scrollX, 0);
-    galleryContainer.innerHTML = '';
-    apiService.fetchTrending(currentPage).then((data) => {
-      cardsMarkUp(data.results);
-      currentMovies.movies = data.results;
+
+    apiService.fetchTrending(currentPage).then((res) => {
+      cardsMarkUp(res.results);
+      currentMovies.movies = res.results;
       setTimeout(() => spinner.stop(), 1000);
     });
   });
+
+  // Очистка галерии
+  function clearGallery() {
+    galleryContainer.innerHTML = '';
+  }
 
   homeBtnEl.removeEventListener('click', renderMainPageOnClick);
   libBtnEl.addEventListener('click', renderLibHeaderOnClick);

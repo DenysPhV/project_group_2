@@ -13,10 +13,10 @@ export default function modalFilmBox() {
 // Функция отработки нажатия мышки
 function onClick(event) {
   event.preventDefault();
-  galleryContainer.removeEventListener('click', onClick); // Снимаем слушатель с галереи
   if (event.target.nodeName !== 'IMG') {
     return;
   }
+  galleryContainer.removeEventListener('click', onClick); // Снимаем слушатель с галереи
   const filmId = event.target.dataset.id;
   // console.log("filmId", filmId);
 

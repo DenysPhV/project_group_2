@@ -57,15 +57,23 @@ function modalOpenClick() {
 
   window.addEventListener('keydown', pressKey); // Ставим слушатель нажатых клавиш
 
+  const movieId = document.querySelector('.film__btnQueue').dataset.id;
   const moviePoster = document.querySelector('.film__imgBox'); //MK
   moviePoster.addEventListener('click', playMovieMarkUp); //MK
+
+  apiService.fetchVideo(movieId).then((card) => {
+    if (card.length === 0) {
+      document.querySelector('.image__playIcon').remove();
+      moviePoster.removeEventListener('click', playMovieMarkUp);
+      moviePoster.style.cursor = 'unset';
+    }
+  });
 
   watchedBtnLogic();
   queueBtnLogic();
 
   function playMovieMarkUp() {
     moviePoster.removeEventListener('click', playMovieMarkUp);
-    const movieId = document.querySelector('.film__btnQueue').dataset.id;
     apiService
       .fetchVideo(movieId)
       .then((card) => {
@@ -76,7 +84,6 @@ function modalOpenClick() {
         const modalContainer = document.querySelector('.modal__container');
         modalContainer.insertAdjacentHTML('beforeend', videoTemplate(key));
         modalContainer.lastElementChild.scrollIntoView({
-          //MK
           behavior: 'smooth',
         });
       });
